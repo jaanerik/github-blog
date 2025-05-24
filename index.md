@@ -1,9 +1,3 @@
 ---
-title: Welcome to my blog
+title: Making sense of mathematical models
 ---
-
-# Triplet Markov chains
-
-Bla bla bla...
-
-# Variational Bayes methods
