@@ -1,22 +1,7 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
 # 'bundle exec jekyll serve'. If you change this file, please restart the server process.
-#
-# If you need help with YAML syntax, here are some quick references for you:
-# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
-# https://learnxinyminutes.com/docs/yaml/
 #
 # Site settings
 # These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
 title: Explainers
 email: jaanerik.pihel@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
@@ -26,6 +11,9 @@ description: >- # this means to ignore newlines until "baseurl:"
 baseurl: "/github-blog" # the subpath of your site, e.g. /blog
 url: "https://jaanerik.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 github_username: jaanerik 
+
+head_scripts:
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 
 # Build settings
 remote_theme: "mmistakes/minimal-mistakes@4.27.3"
@@ -39,9 +27,10 @@ plugins:
 
 author:
   name     : "Jaan Erik Pihel"
-  gravatar   : 00d19e2f13f629da5e5f05682b76f78f96293694be22ca2a1611aa47e9a4ff91
+  #gravatar   : 00d19e2f13f629da5e5f05682b76f78f96293694be22ca2a1611aa47e9a4ff91
   bio      : "Background in data science and mathematics."
   location : "Tartu, Estonia"
+  avatar   : "https://gravatar.com/avatar/00d19e2f13f629da5e5f05682b76f78f96293694be22ca2a1611aa47e9a4ff91?v=1755933515000&size=256&d=initials"
 
 
 defaults:
@@ -56,6 +45,8 @@ defaults:
       comments: true
       share: true
       related: true
+      toc: true
+      toc_sticky: true
   - scope:
       path: ""
       type: pages
