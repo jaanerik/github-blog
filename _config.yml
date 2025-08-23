@@ -1,4 +1,5 @@
 theme: minima
-title: Explainers on some stuff
+title: Explainers
 author: Jaan Erik Pihel
-description: Interested in the free energy principle
+description: Interested in the probability theory
+mathjax: true
