@@ -14,6 +14,7 @@ github_username: jaanerik
 
 head_scripts:
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+#  - https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full
 
 # Build settings
 remote_theme: "mmistakes/minimal-mistakes@4.27.3"
