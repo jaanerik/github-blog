@@ -28,9 +28,39 @@ url: "https://jaanerik.github.io" # the base hostname & protocol for your site, 
 github_username: jaanerik 
 
 # Build settings
-remote_theme: "jekyll/minima@1e8a445"
+remote_theme: "mmistakes/minimal-mistakes@4.27.3"
+minimal_mistakes_skin: "dark" #"default", "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+#remote_theme: "jekyll/minima@1e8a445"
+timezone: Europe/Tallinn
 plugins:
   - jekyll-feed
+  - jekyll-include-cache
+  - jekyll gravatar
+
+author:
+  name     : "Jaan Erik Pihel"
+  gravatar   : 00d19e2f13f629da5e5f05682b76f78f96293694be22ca2a1611aa47e9a4ff91
+  bio      : "Background in data science and mathematics."
+  location : "Tartu, Estonia"
+
+
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: true
+      share: true
+      related: true
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
 
 # Exclude from processing.
 # The following items will not be processed, by default.
