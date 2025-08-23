@@ -2,5 +2,4 @@ theme: minima
 title: Explainers
 author: Jaan Erik Pihel
 description: Interested in the probability theory
-math_engine: mathjax
-
+markdown: GFM
