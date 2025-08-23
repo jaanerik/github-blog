@@ -1,4 +1,55 @@
-theme: minima
-title: Explainers on some stuff
-author: Jaan Erik Pihel
-description: Interested in the free energy principle
+# Site Info
+title:              "Jaan Erik Pihel"
+description:        "Explainers"
+# google_verify:      abc123 # Put your Google Verification here
+# google_analytics:   UA-123
+
+# Author Info
+author_name:        "Jaan Erik Pihel" # Your name here
+author_email:       jaanerik.pihel@gmail.com # Your email here
+author_gravatar:    00d19e2f13f629da5e5f05682b76f78f96293694be22ca2a1611aa47e9a4ff91 # Your Gravatar md5 hash here for logo
+
+# Site Settings
+url:                 https://jaanerik.github.io/
+baseurl:
+permalink:          /posts/:title # Post permalink
+timezone:           Europe/Tallinn # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+mathjax:            true  # enables support for mathjax - set to false to disable
+
+# Site Build
+highlighter:        rouge
+markdown:           kramdown
+kramdown:
+    input:          GFM
+sass:
+    style:          :compressed
+
+# Other Params
+include:            [ "robots.txt" ]
+exclude:            [ "LICENSE", "README.md", "CNAME", "vendor", "Gemfile" ]
+plugins:
+  - jekyll-sitemap
+  - jekyll-paginate
+
+paginate: 10
+paginate_path: "/blog/page:num/"
+
+defaults:
+  -
+    scope:
+      path:         ""
+    values:
+      layout:       "null"
+  -
+    scope:
+      type:         "pages"
+    values:
+      layout:       "page"
+  -
+    scope:
+      type:         "posts"
+    values:
+      layout:       "post"
+
+
+

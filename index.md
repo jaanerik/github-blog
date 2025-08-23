@@ -1,3 +1,3 @@
 ---
-title: Making sense of mathematical models
+title: Explainers on some probability related stuff
 ---
