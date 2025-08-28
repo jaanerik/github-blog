@@ -22,7 +22,7 @@ author_profile: false
 
 [Master's thesis](https://github.com/jaanerik/github-blog/blob/main/_includes/thesis.pdf)
 
-[Presentation](https://github.com/jaanerik/github-blog/blob/main/_includes/presentation.pdf)
+[Presentation](https://github.com/jaanerik/github-blog/blob/main/_includes/presentatsioon.pdf)
 
 {% gist f8505dc5ee1c81e32c01cb75bb171a5c %}
 
