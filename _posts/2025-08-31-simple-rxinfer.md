@@ -89,6 +89,10 @@ Let us write this instead as $$q_t^{(1)}(w_t) \propto \nu_t^{\text{f}}(w_t) \nu_
 Let us write $$q_{t-1} = \text{Cat}(F)$$ and $$q_{t} = \text{Cat}(G)$$. Then we can write the messages as $$\ln \nu_t^{\text{f}} = \ln A \times F$$ and $$\ln \nu_t^{\text{b}} = (\ln A)^T \times H$$. We can now specify the messages in code.
 
 ```
+struct HmmTransition{T <: Real} <: DiscreteMultivariateDistribution
+    wpast :: AbstractArray{T}
+    wt :: AbstractArray{T}
+end
 @node HmmTransition Stochastic [wt, wp]
 
 @rule HmmTransition(:wp, Marginalisation) (q_wt :: Categorical, meta::MetaTransition) = begin
@@ -119,4 +123,20 @@ $$ -E_{q_{t-1}(w_{t-1}) q_t(w_t)} \left[ \ln p(w_t \\| w_{t-1})  \right]. $$
 
 For the emission node the definition is simpler as we are using clamped $$\hat{\textbf{y}}$$ values. We need to define the average energy and the message to $$w_t$$.
 
+```
+struct EmissionNode{T <: Real} <: ContinuousUnivariateDistribution
+    y :: T
+    wt :: T
+end
+@node EmissionNode Stochastic [y, wt]
 
+@rule EmissionNode(:wt, Marginalisation) (q_y::PointMass, ) = begin
+    B = map(1:U*X) do w pdf(Normal(0,stdev), q_y.point-get_x(w)) end
+    return Categorical(B./sum(B)...)
+end
+@average_energy EmissionNode (q_y::PointMass, q_wt::Categorical) = begin
+    B = map(1:U*X) do w pdf(Normal(0,stdev), q_y.point-get_x(w)) end
+    F = q_wt.p
+    -F' * log.(B)
+end
+```
