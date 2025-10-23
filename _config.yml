@@ -31,8 +31,8 @@ plugins:
 author:
   name     : "Jaan Erik Pihel"
   #gravatar   : 00d19e2f13f629da5e5f05682b76f78f96293694be22ca2a1611aa47e9a4ff91
-  bio      : "My background is in data science and mathematics."
-  location : "Tartu, Estonia"
+  bio      : "Academic background in math, member of SALK."
+  location : "Tallinn, Estonia"
   avatar   : "https://gravatar.com/avatar/00d19e2f13f629da5e5f05682b76f78f96293694be22ca2a1611aa47e9a4ff91?v=1755933515000&size=256&d=initials"
   home     : ""
 
