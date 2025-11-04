@@ -1,9 +1,9 @@
 <html lang="en">
 <head><meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>glm</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>glm2</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <style type="text/css">
-
+pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
 span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
 td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
@@ -10769,12 +10769,52 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-julia"><pre><span></span><span class="c"># using RxInfer, Random, Plots, StableRNGs, LinearAlgebra, StatsPlots, LaTeXStrings, DataFrames, CSV, GLM</span>
-<span class="k">using</span><span class="w"> </span><span class="n">RxInfer</span><span class="p">,</span><span class="w"> </span><span class="n">ReactiveMP</span><span class="p">,</span><span class="w"> </span><span class="n">Random</span><span class="p">,</span><span class="w"> </span><span class="n">Plots</span><span class="p">,</span><span class="w"> </span><span class="n">StableRNGs</span><span class="p">,</span><span class="w"> </span><span class="n">LinearAlgebra</span><span class="p">,</span><span class="w"> </span><span class="n">StatsPlots</span><span class="p">,</span><span class="w"> </span><span class="n">LaTeXStrings</span>
+<div class="highlight hl-julia"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="n">RxInfer</span><span class="p">,</span><span class="w"> </span><span class="n">ReactiveMP</span><span class="p">,</span><span class="w"> </span><span class="n">Random</span><span class="p">,</span><span class="w"> </span><span class="n">Plots</span><span class="p">,</span><span class="w"> </span><span class="n">StableRNGs</span>
+<span class="k">using</span><span class="w"> </span><span class="n">LinearAlgebra</span><span class="p">,</span><span class="w"> </span><span class="n">StatsPlots</span><span class="p">,</span><span class="w"> </span><span class="n">LaTeXStrings</span><span class="p">,</span><span class="w"> </span><span class="n">Combinatorics</span>
+<span class="c">#79 wrap</span>
+<span class="c">#uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu</span>
+<span class="c">#116 wrap</span>
+<span class="c">#uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu</span>
 </pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=91196c15">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [284]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-julia"><pre><span></span><span class="n">partitions</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="n">Iterators</span><span class="o">.</span><span class="n">flatten</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="n">collect</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[284]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>10-element Vector{Vector{Int64}}:
+ [1, 2, 3]
+ [1, 2]
+ [3]
+ [1, 3]
+ [2]
+ [1]
+ [2, 3]
+ [1]
+ [2]
+ [3]</pre>
 </div>
 </div>
 </div>
@@ -10786,7 +10826,39 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Generate-data">Generate data<a class="anchor-link" href="#Generate-data">¶</a></h1>
+<h1 id="Generative-process">Generative process<a class="anchor-link" href="#Generative-process">¶</a></h1>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=3e7df681">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-julia"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="n">combine_pred_mat!</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="w">    </span><span class="n">A</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">zeros</span><span class="p">(</span><span class="n">J</span><span class="p">)</span>
+<span class="w">    </span><span class="n">inds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">LinearIndices</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="w"> </span><span class="c"># inds[5,4,1] -&gt; 1020</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="kt">CartesianIndices</span><span class="p">(</span><span class="n">J</span><span class="p">)</span><span class="w"> </span><span class="c"># j = [1,1,1] ... [5,4,51]</span>
+<span class="w">        </span><span class="n">X</span><span class="p">[</span><span class="n">inds</span><span class="p">[</span><span class="n">j</span><span class="p">],</span><span class="w"> </span><span class="o">:</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">X¹</span><span class="p">[</span><span class="n">j</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span><span class="w"> </span><span class="n">X³</span><span class="p">[</span><span class="n">j</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span><span class="mi">1</span><span class="p">],</span><span class="w"> </span><span class="n">X³</span><span class="p">[</span><span class="n">j</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span><span class="mi">2</span><span class="p">]]</span>
+<span class="w">    </span><span class="k">end</span>
+<span class="k">end</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[2]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>combine_pred_mat! (generic function with 1 method)</pre>
+</div>
 </div>
 </div>
 </div>
@@ -10795,38 +10867,37 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [73]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-julia"><pre><span></span><span class="n">ν</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
+<div class="highlight hl-julia"><pre><span></span><span class="n">rng</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">StableRNG</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">ν</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
 <span class="n">σ₀</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
+<span class="c"># income level X ethnicity X state</span>
+<span class="n">J</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">51</span><span class="p">)</span>
+<span class="n">α</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">randn</span><span class="p">(</span><span class="n">rng</span><span class="p">,</span><span class="w"> </span><span class="n">prod</span><span class="p">(</span><span class="n">J</span><span class="p">))</span><span class="w"> </span><span class="c">#cell specific random effect</span>
+<span class="n">β</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">0.5</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mf">0.05</span><span class="p">,</span><span class="w"> </span><span class="mf">1.</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mf">.08e-5</span><span class="p">]</span><span class="w"> </span><span class="c">#[const, inc level, prev rep vote, state inc]</span>
+<span class="n">X¹</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="o">:</span><span class="mi">5</span><span class="w"> </span><span class="c"># income levels</span>
+<span class="c"># X² = ones(4) # Note const terms added in with combine_pred_mat!</span>
+<span class="c"># Note: absolutely no interaction between income and rep vote share below</span>
+<span class="n">X³</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">hcat</span><span class="p">(</span><span class="n">rand</span><span class="p">(</span><span class="n">rng</span><span class="p">,</span><span class="w"> </span><span class="n">Uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="mi">51</span><span class="p">),</span><span class="w"> </span><span class="mf">12e3</span><span class="o">.*</span><span class="n">randn</span><span class="p">(</span><span class="n">rng</span><span class="p">,</span><span class="w"> </span><span class="mi">51</span><span class="p">)</span><span class="o">.+</span><span class="mf">65e3</span><span class="p">)</span><span class="w"> </span><span class="c">#rep prev vote share, wage yearly</span>
+<span class="n">X</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ones</span><span class="p">(</span><span class="n">prod</span><span class="p">(</span><span class="n">J</span><span class="p">),</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="c"># const + (L₁ - 1) + (L₂ - 1) + (L₃ - 1) no interactions yet</span>
+<span class="n">X</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="n">combine_pred_mat!</span>
+<span class="c">#~100k voters per cell to expect avg 100 mil potential voters</span>
+<span class="n">N</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rand</span><span class="p">(</span><span class="n">rng</span><span class="p">,</span><span class="w"> </span><span class="n">Uniform</span><span class="p">(</span><span class="mf">40e3</span><span class="p">,</span><span class="w"> </span><span class="mf">160e3</span><span class="p">),</span><span class="n">prod</span><span class="p">(</span><span class="n">J</span><span class="p">))</span><span class="w"> </span><span class="o">.|&gt;</span><span class="w"> </span><span class="n">round</span><span class="w"> </span><span class="o">.|&gt;</span><span class="w"> </span><span class="kt">Int</span>
 
-<span class="k">function</span><span class="w"> </span><span class="n">generate_synthetic_binomial_data</span><span class="p">(</span>
-<span class="w">    </span><span class="n">n_samples</span><span class="o">::</span><span class="kt">Int</span><span class="p">,</span>
-<span class="w">    </span><span class="n">true_beta</span><span class="o">::</span><span class="kt">Vector</span><span class="p">{</span><span class="kt">Float64</span><span class="p">};</span>
-<span class="w">    </span><span class="n">seed</span><span class="o">::</span><span class="kt">Int</span><span class="o">=</span><span class="mi">42</span>
-<span class="p">)</span>
-<span class="w">    </span><span class="n">n_features</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">length</span><span class="p">(</span><span class="n">true_beta</span><span class="p">)</span>
-<span class="w">    </span><span class="n">rng</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">StableRNG</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
-<span class="w">    </span>
-<span class="w">    </span><span class="n">X</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">randn</span><span class="p">(</span><span class="n">rng</span><span class="p">,</span><span class="w"> </span><span class="n">n_samples</span><span class="p">,</span><span class="w"> </span><span class="n">n_features</span><span class="p">)</span>
-<span class="w">    </span>
-<span class="w">    </span><span class="n">cell_populations</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rand</span><span class="p">(</span><span class="n">rng</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="o">:</span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="n">n_samples</span><span class="p">)</span>
-<span class="w">    </span>
-<span class="w">    </span><span class="n">logits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">X</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">true_beta</span>
-<span class="w">    </span><span class="n">probs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">./</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">.+</span><span class="w"> </span><span class="n">exp</span><span class="o">.</span><span class="p">(</span><span class="o">-</span><span class="n">logits</span><span class="p">))</span>
-<span class="w">    </span>
-<span class="w">    </span><span class="n">cell_turnouts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="n">rand</span><span class="p">(</span><span class="n">rng</span><span class="p">,</span><span class="w"> </span><span class="n">Binomial</span><span class="p">(</span><span class="n">cell_populations</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="w"> </span><span class="n">probs</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="mi">1</span><span class="o">:</span><span class="n">n_samples</span><span class="p">]</span>
-<span class="w">    </span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">X</span><span class="p">,</span><span class="w"> </span><span class="n">cell_turnouts</span><span class="p">,</span><span class="w"> </span><span class="n">cell_populations</span><span class="p">,</span><span class="w"> </span><span class="n">probs</span>
+<span class="n">logits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">X</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">β</span><span class="p">)</span><span class="w"> </span><span class="o">.+</span><span class="w"> </span><span class="n">α</span>
+<span class="n">θ</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">./</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">.+</span><span class="w"> </span><span class="n">exp</span><span class="o">.</span><span class="p">(</span><span class="o">-</span><span class="n">logits</span><span class="p">))</span>
+
+<span class="k">function</span><span class="w"> </span><span class="n">generate_synthetic_turnout_data</span><span class="p">(</span>
+<span class="w">    </span><span class="n">J</span><span class="o">::</span><span class="kt">Tuple</span><span class="p">{</span><span class="kt">Int64</span><span class="p">,</span><span class="w"> </span><span class="kt">Int64</span><span class="p">,</span><span class="w"> </span><span class="kt">Int64</span><span class="p">},</span>
+<span class="w">    </span><span class="n">θ</span><span class="o">::</span><span class="kt">Vector</span><span class="p">{</span><span class="kt">Float64</span><span class="p">}</span>
+<span class="p">)</span><span class="w">  </span>
+<span class="w">    </span><span class="n">cell_turnouts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="n">rand</span><span class="p">(</span><span class="n">rng</span><span class="p">,</span><span class="w"> </span><span class="n">Binomial</span><span class="p">(</span><span class="n">N</span><span class="p">[</span><span class="n">j</span><span class="p">],</span><span class="w"> </span><span class="n">θ</span><span class="p">[</span><span class="n">j</span><span class="p">]))</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="mi">1</span><span class="o">:</span><span class="n">prod</span><span class="p">(</span><span class="n">J</span><span class="p">)]</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">cell_turnouts</span>
 <span class="k">end</span>
 
-
-<span class="n">n_samples</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10000</span>
-<span class="n">true_beta</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="p">[</span><span class="o">-</span><span class="mf">3.0</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="mf">2.6</span><span class="p">]</span>
-
-<span class="n">X</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">n_trials</span><span class="p">,</span><span class="n">probs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">generate_synthetic_binomial_data</span><span class="p">(</span><span class="n">n_samples</span><span class="p">,</span><span class="w"> </span><span class="n">true_beta</span><span class="p">);</span>
-<span class="n">X</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="n">collect</span><span class="p">(</span><span class="n">row</span><span class="p">)</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">row</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">eachrow</span><span class="p">(</span><span class="n">X</span><span class="p">)];</span>
+<span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">generate_synthetic_turnout_data</span><span class="p">(</span><span class="n">J</span><span class="p">,</span><span class="w"> </span><span class="n">θ</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -10837,7 +10908,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-julia"><pre><span></span><span class="n">InverseGamma</span><span class="p">(</span><span class="n">ν</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">ν</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">σ₀</span><span class="o">^</span><span class="mi">2</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="c"># this isScale Inverse Chi Squared distribution as Gelman spec-d</span>
@@ -10851,57 +10922,13 @@ a.anchor-link {
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[4]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>InverseGamma{Float64}(
 invd: Gamma{Float64}(α=0.5, θ=2.0)
 θ: 0.5
 )
 </pre>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=67810452">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [70]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-julia"><pre><span></span><span class="n">n_trials</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rand</span><span class="p">(</span><span class="n">rng</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="o">:</span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="n">n_samples</span><span class="p">);</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=462cce47">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-julia"><pre><span></span><span class="n">rng</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">StableRNG</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
-<span class="n">n_features</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">true_beta</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="n">length</span>
-<span class="n">X</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">randn</span><span class="p">(</span><span class="n">rng</span><span class="p">,</span><span class="w"> </span><span class="n">n_samples</span><span class="p">,</span><span class="w"> </span><span class="n">n_features</span><span class="p">);</span>
-
-<span class="n">X</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">true_beta</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="n">size</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[10]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>(10000,)</pre>
 </div>
 </div>
 </div>
@@ -10917,7 +10944,7 @@ invd: Gamma{Float64}(α=0.5, θ=2.0)
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=29e28672">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=efd28cd0">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -10925,15 +10952,184 @@ invd: Gamma{Float64}(α=0.5, θ=2.0)
 <div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-julia"><pre><span></span><span class="nd">@model</span><span class="w"> </span><span class="k">function</span><span class="w"> </span><span class="n">binomial_model</span><span class="p">(</span><span class="n">prior_xi</span><span class="p">,</span><span class="w"> </span><span class="n">prior_precision</span><span class="p">,</span><span class="w"> </span><span class="n">n_trials</span><span class="p">,</span><span class="w"> </span><span class="n">X</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span>
-<span class="w">    </span><span class="n">β</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">MvNormalWeightedMeanPrecision</span><span class="p">(</span><span class="n">prior_xi</span><span class="p">,</span><span class="w"> </span><span class="n">prior_precision</span><span class="p">)</span>
-<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">eachindex</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
-<span class="w">        </span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">BinomialPolya</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="w"> </span><span class="n">n_trials</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="w"> </span><span class="n">β</span><span class="p">)</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="kt">dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">RequireMessageFunctionalDependencies</span><span class="p">(</span><span class="kt">β</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">MvNormalWeightedMeanPrecision</span><span class="p">(</span><span class="kt">prior_xi</span><span class="p">,</span><span class="w"> </span><span class="kt">prior_precision</span><span class="p">))</span>
+<div class="highlight hl-julia"><pre><span></span><span class="o">?</span><span class="n">BinomialPolya</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>search: <span class="ansi-bold">B</span><span class="ansi-bold">i</span><span class="ansi-bold">n</span><span class="ansi-bold">o</span><span class="ansi-bold">m</span><span class="ansi-bold">i</span><span class="ansi-bold">a</span><span class="ansi-bold">l</span><span class="ansi-bold">P</span><span class="ansi-bold">o</span><span class="ansi-bold">l</span><span class="ansi-bold">y</span><span class="ansi-bold">a</span> <span class="ansi-bold">B</span><span class="ansi-bold">i</span><span class="ansi-bold">n</span><span class="ansi-bold">o</span><span class="ansi-bold">m</span><span class="ansi-bold">i</span><span class="ansi-bold">a</span><span class="ansi-bold">l</span><span class="ansi-bold">P</span><span class="ansi-bold">o</span><span class="ansi-bold">l</span><span class="ansi-bold">y</span><span class="ansi-bold">a</span>Meta <span class="ansi-bold">B</span><span class="ansi-bold">i</span><span class="ansi-bold">n</span><span class="ansi-bold">o</span><span class="ansi-bold">m</span><span class="ansi-bold">i</span><span class="ansi-bold">a</span><span class="ansi-bold">l</span> <span class="ansi-bold">b</span><span class="ansi-bold">i</span><span class="ansi-bold">n</span><span class="ansi-bold">o</span><span class="ansi-bold">m</span><span class="ansi-bold">i</span><span class="ansi-bold">a</span><span class="ansi-bold">l</span>
+
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[5]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/markdown" tabindex="0">
+<pre><code>BinomialPolya
+</code></pre>
+<p>A node type representing a Binomial likelihood with linear predictor through logistic. A Normal prior on the weights is used.  The prior is augmented with a PolyaGamma distribution, which is used for modeling count data with overdispersion.  This implementation follows the PolyaGamma augmentation scheme for Bayesian inference. Can be used for Binomial regression.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ded12d2d">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>How many $\alpha$-s? $J = (5,4,51)$ thus without interactions there would be $\alpha^0$ (i.e 1) and then $5+4+51$ different random variables.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=86f28cd6">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [20]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-julia"><pre><span></span><span class="n">ci</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">CartesianIndices</span><span class="p">(</span><span class="n">zeros</span><span class="p">(</span><span class="n">J</span><span class="p">))</span>
+<span class="nd">@model</span><span class="w"> </span><span class="k">function</span><span class="w"> </span><span class="n">binomial_model</span><span class="p">(</span><span class="n">y</span><span class="o">::</span><span class="kt">Vector</span><span class="p">{</span><span class="o">&lt;:</span><span class="kt">Real</span><span class="p">})</span><span class="w"> </span>
+<span class="w">    </span><span class="n">print</span><span class="p">(</span><span class="s">"hello"</span><span class="p">)</span>
+<span class="w">    </span><span class="n">β</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">MvNormalMeanCovariance</span><span class="p">(</span><span class="n">zeros</span><span class="p">(</span><span class="mi">4</span><span class="p">),</span><span class="w"> </span><span class="n">diageye</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span><span class="w"> </span><span class="c">#Gelman spec-d uniform, can't do that here</span>
+<span class="w">    </span><span class="n">print</span><span class="p">(</span><span class="s">"hello2"</span><span class="p">)</span>
+<span class="w">    </span><span class="n">σ⁰</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">InverseGamma</span><span class="p">(</span><span class="n">ν</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">ν</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">σ₀</span><span class="o">^</span><span class="mi">2</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="c"># this is Scale Inverse Chi Squared distribution as Gelman spec-d</span>
+<span class="w">    </span><span class="n">print</span><span class="p">(</span><span class="s">"hello3"</span><span class="p">)</span>
+<span class="w">    </span><span class="n">α⁰</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">Normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">σ⁰</span><span class="p">)</span>
+<span class="w">    </span><span class="n">print</span><span class="p">(</span><span class="s">"hello4"</span><span class="p">)</span>
+<span class="w">    </span><span class="n">αⱼ₁</span><span class="p">[</span><span class="mi">1</span><span class="o">:</span><span class="mi">3</span><span class="p">]</span><span class="w"> </span><span class="o">.~</span><span class="w"> </span><span class="n">Normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">σ⁰</span><span class="p">)</span>
+<span class="w">    </span><span class="n">αⱼ₂</span><span class="p">[</span><span class="mi">1</span><span class="o">:</span><span class="mi">4</span><span class="p">]</span><span class="w"> </span><span class="o">.~</span><span class="w"> </span><span class="n">Normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">σ⁰</span><span class="p">)</span>
+<span class="w">    </span><span class="n">αⱼ₃</span><span class="p">[</span><span class="mi">1</span><span class="o">:</span><span class="mi">51</span><span class="p">]</span><span class="w"> </span><span class="o">.~</span><span class="w"> </span><span class="n">Normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">σ⁰</span><span class="p">)</span>
+<span class="w">    </span><span class="n">print</span><span class="p">(</span><span class="s">"hello5"</span><span class="p">)</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">eachindex</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="w">        </span><span class="n">j₁</span><span class="p">,</span><span class="n">j₂</span><span class="p">,</span><span class="n">j₃</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ci</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="kt">Tuple</span>
+<span class="w">        </span><span class="n">Σα</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">α⁰</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">αⱼ₁</span><span class="p">[</span><span class="n">j₁</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">αⱼ₂</span><span class="p">[</span><span class="n">j₂</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">αⱼ₃</span><span class="p">[</span><span class="n">j₃</span><span class="p">]</span>
+<span class="w">        </span><span class="c"># Currently trying to add to const term instead of TODO.</span>
+<span class="w">        </span><span class="c"># βj := β + vcat(Σα[j],zeros(3)) #TODO: needs expanded β with zeros. Expanded X with another ones column.</span>
+<span class="w">        </span><span class="n">y</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">BinomialPolya</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">j</span><span class="p">],</span><span class="w"> </span><span class="n">N</span><span class="p">[</span><span class="n">j</span><span class="p">],</span><span class="w"> </span><span class="n">β</span><span class="p">)</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="kt">dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">RequireMessageFunctionalDependencies</span><span class="p">(</span>
+<span class="w">                </span><span class="kt">β</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">MvNormalMeanCovariance</span><span class="p">(</span><span class="kt">mean</span><span class="p">(</span><span class="kt">β</span><span class="p">),</span><span class="w"> </span><span class="kt">cov</span><span class="p">(</span><span class="kt">β</span><span class="p">))</span>
+<span class="w">            </span><span class="p">)</span>
 <span class="w">        </span><span class="p">}</span>
 <span class="w">    </span><span class="k">end</span>
 <span class="k">end</span>
 </pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
+<pre><span class="ansi-yellow-intense-fg ansi-bold">┌ </span><span class="ansi-yellow-intense-fg ansi-bold">Warning: </span>Type annotation found in interface y::Vector{&lt;:Real}. While this will check that y is an Vector{&lt;:Real}, dynamic creation of submodels using multiple dispatch is not supported.
+<span class="ansi-yellow-intense-fg ansi-bold">└ </span><span class="ansi-black-intense-fg">@ GraphPPL ~/.julia/packages/GraphPPL/xPNyo/src/model_macro.jl:684</span>
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=5458259d">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [24]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-julia"><pre><span></span><span class="n">ci</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">CartesianIndices</span><span class="p">(</span><span class="n">zeros</span><span class="p">(</span><span class="n">J</span><span class="p">))</span>
+<span class="nd">@model</span><span class="w"> </span><span class="k">function</span><span class="w"> </span><span class="n">binomial_model</span><span class="p">(</span><span class="n">y</span><span class="o">::</span><span class="kt">Vector</span><span class="p">{</span><span class="o">&lt;:</span><span class="kt">Real</span><span class="p">})</span><span class="w"> </span>
+<span class="w">    </span><span class="n">β</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">MvNormalMeanCovariance</span><span class="p">(</span><span class="n">zeros</span><span class="p">(</span><span class="mi">4</span><span class="p">),</span><span class="w"> </span><span class="n">diageye</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span><span class="w"> </span><span class="c">#Gelman spec-d uniform, can't do that here</span>
+<span class="w">    </span><span class="n">print</span><span class="p">(</span><span class="s">"hello2"</span><span class="p">)</span>
+<span class="w">    </span><span class="n">σ⁰</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">InverseGamma</span><span class="p">(</span><span class="n">ν</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">ν</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">σ₀</span><span class="o">^</span><span class="mi">2</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="c"># this is Scale Inverse Chi Squared distribution as Gelman spec-d</span>
+<span class="w">    </span><span class="n">print</span><span class="p">(</span><span class="s">"hello3"</span><span class="p">)</span>
+<span class="w">    </span><span class="n">α⁰</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">Normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">σ⁰</span><span class="p">)</span>
+<span class="w">    </span><span class="n">print</span><span class="p">(</span><span class="s">"hello4"</span><span class="p">)</span>
+<span class="w">    </span><span class="n">αⱼ</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">Normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">σ⁰</span><span class="p">)</span>
+<span class="w">    </span><span class="n">print</span><span class="p">(</span><span class="s">"hello5"</span><span class="p">)</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">eachindex</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="w">        </span><span class="n">j₁</span><span class="p">,</span><span class="n">j₂</span><span class="p">,</span><span class="n">j₃</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ci</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="kt">Tuple</span>
+<span class="w">        </span><span class="n">Σα</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">α⁰</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">αⱼ</span>
+<span class="w">        </span><span class="c"># Currently trying to add to const term instead of TODO.</span>
+<span class="w">        </span><span class="c"># βj := β + vcat(Σα[j],zeros(3)) #TODO: needs expanded β with zeros. Expanded X with another ones column.</span>
+<span class="w">        </span><span class="n">y</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">BinomialPolya</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">j</span><span class="p">],</span><span class="w"> </span><span class="n">N</span><span class="p">[</span><span class="n">j</span><span class="p">],</span><span class="w"> </span><span class="n">β</span><span class="p">)</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="kt">dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">RequireMessageFunctionalDependencies</span><span class="p">(</span>
+<span class="w">                </span><span class="kt">β</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">MvNormalMeanCovariance</span><span class="p">(</span><span class="kt">zeros</span><span class="p">(</span><span class="mi">4</span><span class="p">),</span><span class="w"> </span><span class="kt">diageye</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
+<span class="w">            </span><span class="p">)</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="k">end</span>
+<span class="k">end</span>
+
+<span class="n">model_generator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">binomial_model</span><span class="p">()</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="p">(</span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">y</span><span class="p">,)</span>
+<span class="n">model_to_plot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">RxInfer</span><span class="o">.</span><span class="n">getmodel</span><span class="p">(</span><span class="n">RxInfer</span><span class="o">.</span><span class="n">create_model</span><span class="p">(</span><span class="n">model_generator</span><span class="p">))</span>
+<span class="n">GraphViz</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">model_to_plot</span><span class="p">,</span><span class="w"> </span><span class="n">strategy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">:simple</span><span class="p">,</span><span class="w"> </span><span class="n">layout</span><span class="o">=</span><span class="s">"dot"</span><span class="p">,</span><span class="w"> </span><span class="n">width</span><span class="o">=</span><span class="mf">5.</span><span class="p">,</span><span class="n">height</span><span class="o">=</span><span class="mf">5.</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
+<pre><span class="ansi-yellow-intense-fg ansi-bold">┌ </span><span class="ansi-yellow-intense-fg ansi-bold">Warning: </span>Type annotation found in interface y::Vector{&lt;:Real}. While this will check that y is an Vector{&lt;:Real}, dynamic creation of submodels using multiple dispatch is not supported.
+<span class="ansi-yellow-intense-fg ansi-bold">└ </span><span class="ansi-black-intense-fg">@ GraphPPL ~/.julia/packages/GraphPPL/xPNyo/src/model_macro.jl:684</span>
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
+<pre>
+MethodError: Cannot `convert` an object of type 
+  <span class="ansi-green-intense-fg">GraphPPL.ProxyLabel{GraphPPL.VariableRef{GraphPPL.Model{MetaGraphsNext.MetaGraph{Int64, Graphs.SimpleGraphs.SimpleGraph{Int64}, GraphPPL.NodeLabel, GraphPPL.NodeData, GraphPPL.EdgeLabel, GraphPPL.Context, MetaGraphsNext.var"#4#8", Float64}, GraphPPL.PluginsCollection{Tuple{}}, RxInfer.ReactiveMPGraphPPLBackend{Static.False}, String}, GraphPPL.Context, GraphPPL.NodeCreationOptions{@NamedTuple{kind::Symbol, factorized::Bool}}, Tuple{Nothing}, Vector{Int64}, Nothing}, Nothing, Static.True}</span> to an object of type 
+  <span class="ansi-red-intense-fg">Vector{&lt;:Real}</span>
+The function `convert` exists, but no method is defined for this combination of argument types.
+
+Closest candidates are:
+  convert(::Type{T}, <span class="ansi-red-intense-fg">::T</span>) where T
+<span class="ansi-black-intense-fg">   @</span> <span class="ansi-black-intense-fg">Base</span> <span class="ansi-black-intense-fg ansi-underline">Base.jl:126</span>
+  convert(::Type{T}, <span class="ansi-red-intense-fg">::AbstractArray</span>) where T&lt;:Array
+<span class="ansi-black-intense-fg">   @</span> <span class="ansi-black-intense-fg">Base</span> <span class="ansi-black-intense-fg ansi-underline">array.jl:618</span>
+  convert(::Type{T}, <span class="ansi-red-intense-fg">::Factorization</span>) where T&lt;:AbstractArray
+<span class="ansi-black-intense-fg">   @</span> <span class="ansi-yellow-fg">LinearAlgebra</span> <span class="ansi-black-intense-fg">~/.julia/juliaup/julia-1.11.2+0.aarch64.apple.darwin14/share/julia/stdlib/v1.11/LinearAlgebra/src/</span><span class="ansi-black-intense-fg ansi-underline">factorization.jl:104</span>
+  ...
+
+
+Stacktrace:
+ [1] add_terminated_submodel!(__model__::GraphPPL.Model{MetaGraphsNext.MetaGraph{Int64, Graphs.SimpleGraphs.SimpleGraph{Int64}, GraphPPL.NodeLabel, GraphPPL.NodeData, GraphPPL.EdgeLabel, GraphPPL.Context, MetaGraphsNext.var"#4#8", Float64}, GraphPPL.PluginsCollection{Tuple{}}, RxInfer.ReactiveMPGraphPPLBackend{Static.False}, String}, __context__::GraphPPL.Context, __options__::GraphPPL.NodeCreationOptions{@NamedTuple{created_by::GraphPPL.var"#95#96"}}, ::typeof(binomial_model), __interfaces__::@NamedTuple{y::GraphPPL.ProxyLabel{GraphPPL.VariableRef{GraphPPL.Model{MetaGraphsNext.MetaGraph{Int64, Graphs.SimpleGraphs.SimpleGraph{Int64}, GraphPPL.NodeLabel, GraphPPL.NodeData, GraphPPL.EdgeLabel, GraphPPL.Context, MetaGraphsNext.var"#4#8", Float64}, GraphPPL.PluginsCollection{Tuple{}}, RxInfer.ReactiveMPGraphPPLBackend{Static.False}, String}, GraphPPL.Context, GraphPPL.NodeCreationOptions{@NamedTuple{kind::Symbol, factorized::Bool}}, Tuple{Nothing}, Vector{Int64}, Nothing}, Nothing, Static.True}}, ::Static.StaticInt{1})
+   @ Main ~/.julia/packages/GraphPPL/xPNyo/src/model_macro.jl:700
+ [2] add_terminated_submodel!(model::GraphPPL.Model{MetaGraphsNext.MetaGraph{Int64, Graphs.SimpleGraphs.SimpleGraph{Int64}, GraphPPL.NodeLabel, GraphPPL.NodeData, GraphPPL.EdgeLabel, GraphPPL.Context, MetaGraphsNext.var"#4#8", Float64}, GraphPPL.PluginsCollection{Tuple{}}, RxInfer.ReactiveMPGraphPPLBackend{Static.False}, String}, context::GraphPPL.Context, options::GraphPPL.NodeCreationOptions{@NamedTuple{created_by::GraphPPL.var"#95#96"}}, fform::Function, interfaces::@NamedTuple{y::GraphPPL.ProxyLabel{GraphPPL.VariableRef{GraphPPL.Model{MetaGraphsNext.MetaGraph{Int64, Graphs.SimpleGraphs.SimpleGraph{Int64}, GraphPPL.NodeLabel, GraphPPL.NodeData, GraphPPL.EdgeLabel, GraphPPL.Context, MetaGraphsNext.var"#4#8", Float64}, GraphPPL.PluginsCollection{Tuple{}}, RxInfer.ReactiveMPGraphPPLBackend{Static.False}, String}, GraphPPL.Context, GraphPPL.NodeCreationOptions{@NamedTuple{kind::Symbol, factorized::Bool}}, Tuple{Nothing}, Vector{Int64}, Nothing}, Nothing, Static.True}})
+   @ GraphPPL ~/.julia/packages/GraphPPL/xPNyo/src/graph_engine.jl:2118
+ [3] add_terminated_submodel!(model::GraphPPL.Model{MetaGraphsNext.MetaGraph{Int64, Graphs.SimpleGraphs.SimpleGraph{Int64}, GraphPPL.NodeLabel, GraphPPL.NodeData, GraphPPL.EdgeLabel, GraphPPL.Context, MetaGraphsNext.var"#4#8", Float64}, GraphPPL.PluginsCollection{Tuple{}}, RxInfer.ReactiveMPGraphPPLBackend{Static.False}, String}, context::GraphPPL.Context, fform::Function, interfaces::@NamedTuple{y::GraphPPL.ProxyLabel{GraphPPL.VariableRef{GraphPPL.Model{MetaGraphsNext.MetaGraph{Int64, Graphs.SimpleGraphs.SimpleGraph{Int64}, GraphPPL.NodeLabel, GraphPPL.NodeData, GraphPPL.EdgeLabel, GraphPPL.Context, MetaGraphsNext.var"#4#8", Float64}, GraphPPL.PluginsCollection{Tuple{}}, RxInfer.ReactiveMPGraphPPLBackend{Static.False}, String}, GraphPPL.Context, GraphPPL.NodeCreationOptions{@NamedTuple{kind::Symbol, factorized::Bool}}, Tuple{Nothing}, Vector{Int64}, Nothing}, Nothing, Static.True}})
+   @ GraphPPL ~/.julia/packages/GraphPPL/xPNyo/src/graph_engine.jl:2114
+ [4] add_toplevel_model!(model::GraphPPL.Model{MetaGraphsNext.MetaGraph{Int64, Graphs.SimpleGraphs.SimpleGraph{Int64}, GraphPPL.NodeLabel, GraphPPL.NodeData, GraphPPL.EdgeLabel, GraphPPL.Context, MetaGraphsNext.var"#4#8", Float64}, GraphPPL.PluginsCollection{Tuple{}}, RxInfer.ReactiveMPGraphPPLBackend{Static.False}, String}, context::GraphPPL.Context, fform::Function, interfaces::@NamedTuple{y::GraphPPL.ProxyLabel{GraphPPL.VariableRef{GraphPPL.Model{MetaGraphsNext.MetaGraph{Int64, Graphs.SimpleGraphs.SimpleGraph{Int64}, GraphPPL.NodeLabel, GraphPPL.NodeData, GraphPPL.EdgeLabel, GraphPPL.Context, MetaGraphsNext.var"#4#8", Float64}, GraphPPL.PluginsCollection{Tuple{}}, RxInfer.ReactiveMPGraphPPLBackend{Static.False}, String}, GraphPPL.Context, GraphPPL.NodeCreationOptions{@NamedTuple{kind::Symbol, factorized::Bool}}, Tuple{Nothing}, Vector{Int64}, Nothing}, Nothing, Static.True}})
+   @ GraphPPL ~/.julia/packages/GraphPPL/xPNyo/src/graph_engine.jl:2134
+ [5] create_model(callback::RxInfer.var"#53#55"{@NamedTuple{y::Vector{Int64}}}, generator::GraphPPL.ModelGenerator{typeof(binomial_model), @Kwargs{}, GraphPPL.PluginsCollection{Tuple{}}, RxInfer.ReactiveMPGraphPPLBackend{Static.False}, String})
+   @ GraphPPL ~/.julia/packages/GraphPPL/xPNyo/src/model_generator.jl:159
+ [6] __infer_create_factor_graph_model(generator::GraphPPL.ModelGenerator{typeof(binomial_model), @Kwargs{}, GraphPPL.PluginsCollection{Tuple{}}, RxInfer.ReactiveMPGraphPPLBackend{Static.False}, String}, conditioned_on::@NamedTuple{y::Vector{Int64}})
+   @ RxInfer ~/.julia/packages/RxInfer/dt0ny/src/model/model.jl:140
+ [7] create_model(generator::RxInfer.ConditionedModelGenerator{GraphPPL.ModelGenerator{typeof(binomial_model), @Kwargs{}, GraphPPL.PluginsCollection{Tuple{}}, RxInfer.ReactiveMPGraphPPLBackend{Static.False}, String}, @NamedTuple{y::Vector{Int64}}})
+   @ RxInfer ~/.julia/packages/RxInfer/dt0ny/src/model/model.jl:128
+ [8] top-level scope
+   @ In[24]:25</pre>
 </div>
 </div>
 </div>
@@ -10954,10 +11150,336 @@ invd: Gamma{Float64}(α=0.5, θ=2.0)
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [19]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-julia"><pre><span></span><span class="n">n_features</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">length</span><span class="p">(</span><span class="n">true_beta</span><span class="p">)</span>
+<div class="highlight hl-julia"><pre><span></span><span class="n">results</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">infer</span><span class="p">(</span>
+<span class="w">    </span><span class="n">model</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">binomial_model</span><span class="p">(),</span>
+<span class="w">    </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,),</span>
+<span class="w">    </span><span class="n">iterations</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span>
+<span class="w">    </span><span class="n">free_energy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">,</span>
+<span class="w">    </span><span class="n">showprogress</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">,</span>
+<span class="w">    </span><span class="n">options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span>
+<span class="w">        </span><span class="n">limit_stack_depth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="c"># to prevent stack-overflow errors</span>
+<span class="w">    </span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
+<pre>
+MethodError: Cannot `convert` an object of type 
+  <span class="ansi-green-intense-fg">GraphPPL.ProxyLabel{GraphPPL.VariableRef{GraphPPL.Model{MetaGraphsNext.MetaGraph{Int64, Graphs.SimpleGraphs.SimpleGraph{Int64}, GraphPPL.NodeLabel, GraphPPL.NodeData, GraphPPL.EdgeLabel, GraphPPL.Context, MetaGraphsNext.var"#4#8", Float64}, GraphPPL.PluginsCollection{Tuple{GraphPPL.VariationalConstraintsPlugin{GraphPPL.NoConstraints}, GraphPPL.MetaPlugin{GraphPPL.MetaSpecification}, RxInfer.InitializationPlugin{RxInfer.NoInit}, RxInfer.ReactiveMPInferencePlugin{RxInfer.ReactiveMPInferenceOptions{RxInfer.LimitStackScheduler, Nothing, Nothing}}, RxInfer.ReactiveMPFreeEnergyPlugin{RxInfer.BetheFreeEnergy{Real, SkipInitial, AsapScheduler}}}}, RxInfer.ReactiveMPGraphPPLBackend{Static.False}, String}, GraphPPL.Context, GraphPPL.NodeCreationOptions{@NamedTuple{kind::Symbol, factorized::Bool}}, Tuple{Nothing}, Vector{Int64}, Nothing}, Nothing, Static.True}</span> to an object of type 
+  <span class="ansi-red-intense-fg">Vector{&lt;:Real}</span>
+The function `convert` exists, but no method is defined for this combination of argument types.
+
+Closest candidates are:
+  convert(::Type{T}, <span class="ansi-red-intense-fg">::T</span>) where T
+<span class="ansi-black-intense-fg">   @</span> <span class="ansi-black-intense-fg">Base</span> <span class="ansi-black-intense-fg ansi-underline">Base.jl:126</span>
+  convert(::Type{T}, <span class="ansi-red-intense-fg">::AbstractArray</span>) where T&lt;:Array
+<span class="ansi-black-intense-fg">   @</span> <span class="ansi-black-intense-fg">Base</span> <span class="ansi-black-intense-fg ansi-underline">array.jl:618</span>
+  convert(::Type{T}, <span class="ansi-red-intense-fg">::Factorization</span>) where T&lt;:AbstractArray
+<span class="ansi-black-intense-fg">   @</span> <span class="ansi-yellow-fg">LinearAlgebra</span> <span class="ansi-black-intense-fg">~/.julia/juliaup/julia-1.11.2+0.aarch64.apple.darwin14/share/julia/stdlib/v1.11/LinearAlgebra/src/</span><span class="ansi-black-intense-fg ansi-underline">factorization.jl:104</span>
+  ...
+
+
+Stacktrace:
+  [1] add_terminated_submodel!(__model__::GraphPPL.Model{MetaGraphsNext.MetaGraph{Int64, Graphs.SimpleGraphs.SimpleGraph{Int64}, GraphPPL.NodeLabel, GraphPPL.NodeData, GraphPPL.EdgeLabel, GraphPPL.Context, MetaGraphsNext.var"#4#8", Float64}, GraphPPL.PluginsCollection{Tuple{GraphPPL.VariationalConstraintsPlugin{GraphPPL.NoConstraints}, GraphPPL.MetaPlugin{GraphPPL.MetaSpecification}, RxInfer.InitializationPlugin{RxInfer.NoInit}, RxInfer.ReactiveMPInferencePlugin{RxInfer.ReactiveMPInferenceOptions{RxInfer.LimitStackScheduler, Nothing, Nothing}}, RxInfer.ReactiveMPFreeEnergyPlugin{RxInfer.BetheFreeEnergy{Real, SkipInitial, AsapScheduler}}}}, RxInfer.ReactiveMPGraphPPLBackend{Static.False}, String}, __context__::GraphPPL.Context, __options__::GraphPPL.NodeCreationOptions{@NamedTuple{created_by::GraphPPL.var"#95#96"}}, ::typeof(binomial_model), __interfaces__::@NamedTuple{y::GraphPPL.ProxyLabel{GraphPPL.VariableRef{GraphPPL.Model{MetaGraphsNext.MetaGraph{Int64, Graphs.SimpleGraphs.SimpleGraph{Int64}, GraphPPL.NodeLabel, GraphPPL.NodeData, GraphPPL.EdgeLabel, GraphPPL.Context, MetaGraphsNext.var"#4#8", Float64}, GraphPPL.PluginsCollection{Tuple{GraphPPL.VariationalConstraintsPlugin{GraphPPL.NoConstraints}, GraphPPL.MetaPlugin{GraphPPL.MetaSpecification}, RxInfer.InitializationPlugin{RxInfer.NoInit}, RxInfer.ReactiveMPInferencePlugin{RxInfer.ReactiveMPInferenceOptions{RxInfer.LimitStackScheduler, Nothing, Nothing}}, RxInfer.ReactiveMPFreeEnergyPlugin{RxInfer.BetheFreeEnergy{Real, SkipInitial, AsapScheduler}}}}, RxInfer.ReactiveMPGraphPPLBackend{Static.False}, String}, GraphPPL.Context, GraphPPL.NodeCreationOptions{@NamedTuple{kind::Symbol, factorized::Bool}}, Tuple{Nothing}, Vector{Int64}, Nothing}, Nothing, Static.True}}, ::Static.StaticInt{1})
+    @ Main ~/.julia/packages/GraphPPL/xPNyo/src/model_macro.jl:700
+  [2] add_terminated_submodel!(model::GraphPPL.Model{MetaGraphsNext.MetaGraph{Int64, Graphs.SimpleGraphs.SimpleGraph{Int64}, GraphPPL.NodeLabel, GraphPPL.NodeData, GraphPPL.EdgeLabel, GraphPPL.Context, MetaGraphsNext.var"#4#8", Float64}, GraphPPL.PluginsCollection{Tuple{GraphPPL.VariationalConstraintsPlugin{GraphPPL.NoConstraints}, GraphPPL.MetaPlugin{GraphPPL.MetaSpecification}, RxInfer.InitializationPlugin{RxInfer.NoInit}, RxInfer.ReactiveMPInferencePlugin{RxInfer.ReactiveMPInferenceOptions{RxInfer.LimitStackScheduler, Nothing, Nothing}}, RxInfer.ReactiveMPFreeEnergyPlugin{RxInfer.BetheFreeEnergy{Real, SkipInitial, AsapScheduler}}}}, RxInfer.ReactiveMPGraphPPLBackend{Static.False}, String}, context::GraphPPL.Context, options::GraphPPL.NodeCreationOptions{@NamedTuple{created_by::GraphPPL.var"#95#96"}}, fform::Function, interfaces::@NamedTuple{y::GraphPPL.ProxyLabel{GraphPPL.VariableRef{GraphPPL.Model{MetaGraphsNext.MetaGraph{Int64, Graphs.SimpleGraphs.SimpleGraph{Int64}, GraphPPL.NodeLabel, GraphPPL.NodeData, GraphPPL.EdgeLabel, GraphPPL.Context, MetaGraphsNext.var"#4#8", Float64}, GraphPPL.PluginsCollection{Tuple{GraphPPL.VariationalConstraintsPlugin{GraphPPL.NoConstraints}, GraphPPL.MetaPlugin{GraphPPL.MetaSpecification}, RxInfer.InitializationPlugin{RxInfer.NoInit}, RxInfer.ReactiveMPInferencePlugin{RxInfer.ReactiveMPInferenceOptions{RxInfer.LimitStackScheduler, Nothing, Nothing}}, RxInfer.ReactiveMPFreeEnergyPlugin{RxInfer.BetheFreeEnergy{Real, SkipInitial, AsapScheduler}}}}, RxInfer.ReactiveMPGraphPPLBackend{Static.False}, String}, GraphPPL.Context, GraphPPL.NodeCreationOptions{@NamedTuple{kind::Symbol, factorized::Bool}}, Tuple{Nothing}, Vector{Int64}, Nothing}, Nothing, Static.True}})
+    @ GraphPPL ~/.julia/packages/GraphPPL/xPNyo/src/graph_engine.jl:2118
+  [3] add_terminated_submodel!(model::GraphPPL.Model{MetaGraphsNext.MetaGraph{Int64, Graphs.SimpleGraphs.SimpleGraph{Int64}, GraphPPL.NodeLabel, GraphPPL.NodeData, GraphPPL.EdgeLabel, GraphPPL.Context, MetaGraphsNext.var"#4#8", Float64}, GraphPPL.PluginsCollection{Tuple{GraphPPL.VariationalConstraintsPlugin{GraphPPL.NoConstraints}, GraphPPL.MetaPlugin{GraphPPL.MetaSpecification}, RxInfer.InitializationPlugin{RxInfer.NoInit}, RxInfer.ReactiveMPInferencePlugin{RxInfer.ReactiveMPInferenceOptions{RxInfer.LimitStackScheduler, Nothing, Nothing}}, RxInfer.ReactiveMPFreeEnergyPlugin{RxInfer.BetheFreeEnergy{Real, SkipInitial, AsapScheduler}}}}, RxInfer.ReactiveMPGraphPPLBackend{Static.False}, String}, context::GraphPPL.Context, fform::Function, interfaces::@NamedTuple{y::GraphPPL.ProxyLabel{GraphPPL.VariableRef{GraphPPL.Model{MetaGraphsNext.MetaGraph{Int64, Graphs.SimpleGraphs.SimpleGraph{Int64}, GraphPPL.NodeLabel, GraphPPL.NodeData, GraphPPL.EdgeLabel, GraphPPL.Context, MetaGraphsNext.var"#4#8", Float64}, GraphPPL.PluginsCollection{Tuple{GraphPPL.VariationalConstraintsPlugin{GraphPPL.NoConstraints}, GraphPPL.MetaPlugin{GraphPPL.MetaSpecification}, RxInfer.InitializationPlugin{RxInfer.NoInit}, RxInfer.ReactiveMPInferencePlugin{RxInfer.ReactiveMPInferenceOptions{RxInfer.LimitStackScheduler, Nothing, Nothing}}, RxInfer.ReactiveMPFreeEnergyPlugin{RxInfer.BetheFreeEnergy{Real, SkipInitial, AsapScheduler}}}}, RxInfer.ReactiveMPGraphPPLBackend{Static.False}, String}, GraphPPL.Context, GraphPPL.NodeCreationOptions{@NamedTuple{kind::Symbol, factorized::Bool}}, Tuple{Nothing}, Vector{Int64}, Nothing}, Nothing, Static.True}})
+    @ GraphPPL ~/.julia/packages/GraphPPL/xPNyo/src/graph_engine.jl:2114
+  [4] add_toplevel_model!(model::GraphPPL.Model{MetaGraphsNext.MetaGraph{Int64, Graphs.SimpleGraphs.SimpleGraph{Int64}, GraphPPL.NodeLabel, GraphPPL.NodeData, GraphPPL.EdgeLabel, GraphPPL.Context, MetaGraphsNext.var"#4#8", Float64}, GraphPPL.PluginsCollection{Tuple{GraphPPL.VariationalConstraintsPlugin{GraphPPL.NoConstraints}, GraphPPL.MetaPlugin{GraphPPL.MetaSpecification}, RxInfer.InitializationPlugin{RxInfer.NoInit}, RxInfer.ReactiveMPInferencePlugin{RxInfer.ReactiveMPInferenceOptions{RxInfer.LimitStackScheduler, Nothing, Nothing}}, RxInfer.ReactiveMPFreeEnergyPlugin{RxInfer.BetheFreeEnergy{Real, SkipInitial, AsapScheduler}}}}, RxInfer.ReactiveMPGraphPPLBackend{Static.False}, String}, context::GraphPPL.Context, fform::Function, interfaces::@NamedTuple{y::GraphPPL.ProxyLabel{GraphPPL.VariableRef{GraphPPL.Model{MetaGraphsNext.MetaGraph{Int64, Graphs.SimpleGraphs.SimpleGraph{Int64}, GraphPPL.NodeLabel, GraphPPL.NodeData, GraphPPL.EdgeLabel, GraphPPL.Context, MetaGraphsNext.var"#4#8", Float64}, GraphPPL.PluginsCollection{Tuple{GraphPPL.VariationalConstraintsPlugin{GraphPPL.NoConstraints}, GraphPPL.MetaPlugin{GraphPPL.MetaSpecification}, RxInfer.InitializationPlugin{RxInfer.NoInit}, RxInfer.ReactiveMPInferencePlugin{RxInfer.ReactiveMPInferenceOptions{RxInfer.LimitStackScheduler, Nothing, Nothing}}, RxInfer.ReactiveMPFreeEnergyPlugin{RxInfer.BetheFreeEnergy{Real, SkipInitial, AsapScheduler}}}}, RxInfer.ReactiveMPGraphPPLBackend{Static.False}, String}, GraphPPL.Context, GraphPPL.NodeCreationOptions{@NamedTuple{kind::Symbol, factorized::Bool}}, Tuple{Nothing}, Vector{Int64}, Nothing}, Nothing, Static.True}})
+    @ GraphPPL ~/.julia/packages/GraphPPL/xPNyo/src/graph_engine.jl:2134
+  [5] create_model(callback::RxInfer.var"#53#55"{@NamedTuple{y::Vector{Int64}}}, generator::GraphPPL.ModelGenerator{typeof(binomial_model), @Kwargs{}, GraphPPL.PluginsCollection{Tuple{GraphPPL.VariationalConstraintsPlugin{GraphPPL.NoConstraints}, GraphPPL.MetaPlugin{GraphPPL.MetaSpecification}, RxInfer.InitializationPlugin{RxInfer.NoInit}, RxInfer.ReactiveMPInferencePlugin{RxInfer.ReactiveMPInferenceOptions{RxInfer.LimitStackScheduler, Nothing, Nothing}}, RxInfer.ReactiveMPFreeEnergyPlugin{RxInfer.BetheFreeEnergy{Real, SkipInitial, AsapScheduler}}}}, RxInfer.ReactiveMPGraphPPLBackend{Static.False}, String})
+    @ GraphPPL ~/.julia/packages/GraphPPL/xPNyo/src/model_generator.jl:159
+  [6] __infer_create_factor_graph_model(generator::GraphPPL.ModelGenerator{typeof(binomial_model), @Kwargs{}, GraphPPL.PluginsCollection{Tuple{GraphPPL.VariationalConstraintsPlugin{GraphPPL.NoConstraints}, GraphPPL.MetaPlugin{GraphPPL.MetaSpecification}, RxInfer.InitializationPlugin{RxInfer.NoInit}, RxInfer.ReactiveMPInferencePlugin{RxInfer.ReactiveMPInferenceOptions{RxInfer.LimitStackScheduler, Nothing, Nothing}}, RxInfer.ReactiveMPFreeEnergyPlugin{RxInfer.BetheFreeEnergy{Real, SkipInitial, AsapScheduler}}}}, RxInfer.ReactiveMPGraphPPLBackend{Static.False}, String}, conditioned_on::@NamedTuple{y::Vector{Int64}})
+    @ RxInfer ~/.julia/packages/RxInfer/dt0ny/src/model/model.jl:140
+  [7] create_model(generator::RxInfer.ConditionedModelGenerator{GraphPPL.ModelGenerator{typeof(binomial_model), @Kwargs{}, GraphPPL.PluginsCollection{Tuple{GraphPPL.VariationalConstraintsPlugin{GraphPPL.NoConstraints}, GraphPPL.MetaPlugin{GraphPPL.MetaSpecification}, RxInfer.InitializationPlugin{RxInfer.NoInit}, RxInfer.ReactiveMPInferencePlugin{RxInfer.ReactiveMPInferenceOptions{RxInfer.LimitStackScheduler, Nothing, Nothing}}, RxInfer.ReactiveMPFreeEnergyPlugin{RxInfer.BetheFreeEnergy{Real, SkipInitial, AsapScheduler}}}}, RxInfer.ReactiveMPGraphPPLBackend{Static.False}, String}, @NamedTuple{y::Vector{Int64}}})
+    @ RxInfer ~/.julia/packages/RxInfer/dt0ny/src/model/model.jl:128
+  [8] batch_inference(; model::GraphPPL.ModelGenerator{typeof(binomial_model), @Kwargs{}, GraphPPL.PluginsCollection{Tuple{}}, RxInfer.ReactiveMPGraphPPLBackend{Static.False}, String}, data::@NamedTuple{y::Vector{Int64}}, initialization::Nothing, constraints::Nothing, meta::Nothing, options::@NamedTuple{limit_stack_depth::Int64}, returnvars::Nothing, predictvars::Nothing, iterations::Int64, free_energy::Bool, free_energy_diagnostics::Tuple{RxInfer.ObjectiveDiagnosticCheckNaNs, RxInfer.ObjectiveDiagnosticCheckInfs}, allow_node_contraction::Bool, showprogress::Bool, callbacks::Nothing, addons::Nothing, postprocess::DefaultPostprocess, warn::Bool, catch_exception::Bool)
+    @ RxInfer ~/.julia/packages/RxInfer/dt0ny/src/inference/batch.jl:203
+  [9] batch_inference
+    @ ~/.julia/packages/RxInfer/dt0ny/src/inference/batch.jl:96 [inlined]
+ [10] #288
+    @ ~/.julia/packages/RxInfer/dt0ny/src/inference/inference.jl:532 [inlined]
+ [11] with_session(f::RxInfer.var"#288#290"{GraphPPL.ModelGenerator{typeof(binomial_model), @Kwargs{}, GraphPPL.PluginsCollection{Tuple{}}, RxInfer.ReactiveMPGraphPPLBackend{Static.False}, String}, @NamedTuple{y::Vector{Int64}}, Nothing, Nothing, Nothing, Nothing, Nothing, @NamedTuple{limit_stack_depth::Int64}, Nothing, Nothing, Nothing, Nothing, Int64, Bool, Tuple{RxInfer.ObjectiveDiagnosticCheckNaNs, RxInfer.ObjectiveDiagnosticCheckInfs}, Bool, Bool, Bool, Nothing, Nothing, DefaultPostprocess, Nothing, Bool, Bool, Bool}, session::RxInfer.Session, label::Symbol)
+    @ RxInfer ~/.julia/packages/RxInfer/dt0ny/src/session.jl:253
+ [12] #infer#287
+    @ ~/.julia/packages/RxInfer/dt0ny/src/inference/inference.jl:502 [inlined]
+ [13] top-level scope
+    @ In[19]:1</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=9971f695">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="Tutorial-code">Tutorial code<a class="anchor-link" href="#Tutorial-code">¶</a></h1>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=6ac88190">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [34]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-julia"><pre><span></span><span class="o">?</span><span class="n">cov</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>search: <span class="ansi-bold">c</span><span class="ansi-bold">o</span><span class="ansi-bold">v</span> <span class="ansi-bold">c</span><span class="ansi-bold">o</span>r <span class="ansi-bold">c</span><span class="ansi-bold">o</span>t mov <span class="ansi-bold">c</span><span class="ansi-bold">o</span>s <span class="ansi-bold">c</span><span class="ansi-bold">o</span>th <span class="ansi-bold">c</span>h<span class="ansi-bold">o</span>p <span class="ansi-bold">c</span><span class="ansi-bold">o</span>td a<span class="ansi-bold">c</span><span class="ansi-bold">o</span>s <span class="ansi-bold">c</span><span class="ansi-bold">o</span>nd <span class="ansi-bold">c</span><span class="ansi-bold">o</span>sd <span class="ansi-bold">c</span><span class="ansi-bold">o</span>nj <span class="ansi-bold">c</span><span class="ansi-bold">o</span>py inv<span class="ansi-bold">c</span><span class="ansi-bold">o</span><span class="ansi-bold">v</span> <span class="ansi-bold">c</span><span class="ansi-bold">o</span>sh
+
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[34]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/markdown" tabindex="0">
+<pre><code>cov(x::AbstractVector; corrected::Bool=true)
+</code></pre>
+<p>Compute the variance of the vector <code>x</code>. If <code>corrected</code> is <code>true</code> (the default) then the sum is scaled with <code>n-1</code>, whereas the sum is scaled with <code>n</code> if <code>corrected</code> is <code>false</code> where <code>n = length(x)</code>.</p>
+<hr/>
+<pre><code>cov(X::AbstractMatrix; dims::Int=1, corrected::Bool=true)
+</code></pre>
+<p>Compute the covariance matrix of the matrix <code>X</code> along the dimension <code>dims</code>. If <code>corrected</code> is <code>true</code> (the default) then the sum is scaled with <code>n-1</code>, whereas the sum is scaled with <code>n</code> if <code>corrected</code> is <code>false</code> where <code>n = size(X, dims)</code>.</p>
+<hr/>
+<pre><code>cov(x::AbstractVector, y::AbstractVector; corrected::Bool=true)
+</code></pre>
+<p>Compute the covariance between the vectors <code>x</code> and <code>y</code>. If <code>corrected</code> is <code>true</code> (the default), computes $\frac{1}{n-1}\sum_{i=1}^n (x_i-\bar x) (y_i-\bar y)^*$ where $*$ denotes the complex conjugate and <code>n = length(x) = length(y)</code>. If <code>corrected</code> is <code>false</code>, computes $\frac{1}{n}\sum_{i=1}^n (x_i-\bar x) (y_i-\bar y)^*$.</p>
+<hr/>
+<pre><code>cov(X::AbstractVecOrMat, Y::AbstractVecOrMat; dims::Int=1, corrected::Bool=true)
+</code></pre>
+<p>Compute the covariance between the vectors or matrices <code>X</code> and <code>Y</code> along the dimension <code>dims</code>. If <code>corrected</code> is <code>true</code> (the default) then the sum is scaled with <code>n-1</code>, whereas the sum is scaled with <code>n</code> if <code>corrected</code> is <code>false</code> where <code>n = size(X, dims) = size(Y, dims)</code>.</p>
+<hr/>
+<pre><code>cov(X, w::AbstractWeights, vardim=1; mean=nothing, corrected=false)
+</code></pre>
+<p>Compute the weighted covariance matrix. Similar to <code>var</code> and <code>std</code> the biased covariance matrix (<code>corrected=false</code>) is computed by multiplying <code>scattermat(X, w)</code> by $\frac{1}{\sum{w}}$ to normalize. However, the unbiased covariance matrix (<code>corrected=true</code>) is dependent on the type of weights used:</p>
+<ul>
+<li><code>AnalyticWeights</code>: $\frac{1}{\sum w - \sum {w^2} / \sum w}$</li>
+<li><code>FrequencyWeights</code>: $\frac{1}{\sum{w} - 1}$</li>
+<li><code>ProbabilityWeights</code>: $\frac{n}{(n - 1) \sum w}$ where $n$ equals <code>count(!iszero, w)</code></li>
+<li><code>Weights</code>: <code>ArgumentError</code> (bias correction not supported)</li>
+</ul>
+<hr/>
+<pre><code>cov(ce::CovarianceEstimator, x::AbstractVector; mean=nothing)
+</code></pre>
+<p>Compute a variance estimate from the observation vector <code>x</code> using the  estimator <code>ce</code>.</p>
+<hr/>
+<pre><code>cov(ce::CovarianceEstimator, x::AbstractVector, y::AbstractVector)
+</code></pre>
+<p>Compute the covariance of the vectors <code>x</code> and <code>y</code> using estimator <code>ce</code>.</p>
+<hr/>
+<pre><code>cov(ce::CovarianceEstimator, X::AbstractMatrix, [w::AbstractWeights]; mean=nothing, dims::Int=1)
+</code></pre>
+<p>Compute the covariance matrix of the matrix <code>X</code> along dimension <code>dims</code> using estimator <code>ce</code>. A weighting vector <code>w</code> can be specified. The keyword argument <code>mean</code> can be:</p>
+<ul>
+<li><p><code>nothing</code> (default) in which case the mean is estimated and subtracted from the data <code>X</code>,</p>
+</li>
+<li><p>a precalculated mean in which case it is subtracted from the data <code>X</code>. Assuming <code>size(X)</code> is <code>(N,M)</code>, <code>mean</code> can either be:</p>
+<ul>
+<li>when <code>dims=1</code>, an <code>AbstractMatrix</code> of size <code>(1,M)</code>,</li>
+<li>when <code>dims=2</code>, an <code>AbstractVector</code> of length <code>N</code> or an <code>AbstractMatrix</code> of size <code>(N,1)</code>.</li>
+</ul>
+</li>
+</ul>
+<hr/>
+<pre><code>cov(d::MultivariateDistribution)
+</code></pre>
+<p>Compute the covariance matrix for distribution <code>d</code>. (<code>cor</code> is provided based on <code>cov</code>).</p>
+<hr/>
+<pre><code>cov(d::MatrixDistribution)
+</code></pre>
+<p>Compute the covariance matrix for <code>vec(X)</code>, where <code>X</code> is a random matrix with distribution <code>d</code>.</p>
+<hr/>
+<pre><code>cov(d::MatrixDistribution, flattened = Val(false))
+</code></pre>
+<p>Compute the 4-dimensional array whose <code>(i, j, k, l)</code> element is <code>cov(X[i,j], X[k, l])</code>.</p>
+<hr/>
+<pre><code>cov(M::PPCA)
+</code></pre>
+<p>Returns the covariance of the model <code>M</code>.</p>
+<hr/>
+<pre><code>cov(M::FactorAnalysis)
+</code></pre>
+<p>Returns the covariance of the model <code>M</code>.</p>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=dc873161">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [36]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-julia"><pre><span></span><span class="n">X</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">MvNormalWeightedMeanPrecision</span><span class="p">(</span><span class="n">zeros</span><span class="p">(</span><span class="mi">4</span><span class="p">),</span><span class="w"> </span><span class="n">diageye</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">params</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[36]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>([0.0, 0.0, 0.0, 0.0], [1.0 0.0 0.0 0.0; 0.0 1.0 0.0 0.0; 0.0 0.0 1.0 0.0; 0.0 0.0 0.0 1.0])</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=43733db7">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [73]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-julia"><pre><span></span><span class="n">β</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="n">typeof</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[73]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>GraphPPL.ModelGenerator{typeof(binomial_model), Base.Pairs{Symbol, Array, NTuple{5, Symbol}, @NamedTuple{prior_xi::Vector{Float64}, prior_precision::Matrix{Float64}, X::Vector{Vector{Float64}}, y::Vector{Int64}, n_trials::Vector{Int64}}}, GraphPPL.PluginsCollection{Tuple{}}, RxInfer.ReactiveMPGraphPPLBackend{Static.False}, String}</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=65e06e36">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [107]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-julia"><pre><span></span><span class="o">?</span><span class="n">RequireMessageFunctionalDependencies</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>search: <span class="ansi-bold">R</span><span class="ansi-bold">e</span><span class="ansi-bold">q</span><span class="ansi-bold">u</span><span class="ansi-bold">i</span><span class="ansi-bold">r</span><span class="ansi-bold">e</span><span class="ansi-bold">M</span><span class="ansi-bold">e</span><span class="ansi-bold">s</span><span class="ansi-bold">s</span><span class="ansi-bold">a</span><span class="ansi-bold">g</span><span class="ansi-bold">e</span><span class="ansi-bold">F</span><span class="ansi-bold">u</span><span class="ansi-bold">n</span><span class="ansi-bold">c</span><span class="ansi-bold">t</span><span class="ansi-bold">i</span><span class="ansi-bold">o</span><span class="ansi-bold">n</span><span class="ansi-bold">a</span><span class="ansi-bold">l</span><span class="ansi-bold">D</span><span class="ansi-bold">e</span><span class="ansi-bold">p</span><span class="ansi-bold">e</span><span class="ansi-bold">n</span><span class="ansi-bold">d</span><span class="ansi-bold">e</span><span class="ansi-bold">n</span><span class="ansi-bold">c</span><span class="ansi-bold">i</span><span class="ansi-bold">e</span><span class="ansi-bold">s</span>
+
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[107]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/markdown" tabindex="0">
+<pre><code>RequireMessageFunctionalDependencies(specifications::NamedTuple)
+RequireMessageFunctionalDependencies(; specifications...)
+</code></pre>
+<p>The same as <code>DefaultFunctionalDependencies</code>, but in order to compute a message out of some edge also requires the inbound message on the this edge.</p>
+<p>The specification parameter is a named tuple that contains the names of the edges and their initial messages.  When a name is present in the named tuple, that indicates that the computation of the outbound message on the same edge must use the inbound message. If <code>nothing</code> is passed as a value in the named tuple, the initial message is not set. Note that the construction allows passing keyword argument to the constructor  instead of using <code>NamedTuple</code> directly.</p>
+<div class="highlight"><pre><span></span><span class="n">RequireMessageFunctionalDependencies</span><span class="p">(</span><span class="n">μ</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vague</span><span class="p">(</span><span class="n">NormalMeanPrecision</span><span class="p">),</span><span class="w">     </span><span class="n">τ</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">nothing</span><span class="p">)</span>
+<span class="w">                                     </span><span class="c"># ^^^                               ^^^</span>
+<span class="w">                                     </span><span class="c"># request 'inbound' for 'x'         we may do the same for 'τ',</span>
+<span class="w">                                     </span><span class="c"># and initialise with `vague(...)`  but here we skip initialisation</span>
+</pre></div>
+<p>See also: <a href="@ref"><code>ReactiveMP.DefaultFunctionalDependencies</code></a>, <a href="@ref"><code>ReactiveMP.RequireMarginalFunctionalDependencies</code></a>, <a href="@ref"><code>ReactiveMP.RequireEverythingFunctionalDependencies</code></a></p>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=04d14ad9">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-julia"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="n">generate_synthetic_binomial_data</span><span class="p">(</span>
+<span class="w">    </span><span class="n">n_samples</span><span class="o">::</span><span class="kt">Int</span><span class="p">,</span>
+<span class="w">    </span><span class="n">true_beta</span><span class="o">::</span><span class="kt">Vector</span><span class="p">{</span><span class="kt">Float64</span><span class="p">};</span>
+<span class="w">    </span><span class="n">seed</span><span class="o">::</span><span class="kt">Int</span><span class="o">=</span><span class="mi">42</span>
+<span class="p">)</span>
+<span class="w">    </span><span class="n">n_features</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">length</span><span class="p">(</span><span class="n">true_beta</span><span class="p">)</span>
+<span class="w">    </span><span class="n">rng</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">StableRNG</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="n">X</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">randn</span><span class="p">(</span><span class="n">rng</span><span class="p">,</span><span class="w"> </span><span class="n">n_samples</span><span class="p">,</span><span class="w"> </span><span class="n">n_features</span><span class="p">)</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="n">n_trials</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rand</span><span class="p">(</span><span class="n">rng</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="o">:</span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="n">n_samples</span><span class="p">)</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="n">logits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">X</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">true_beta</span>
+<span class="w">    </span><span class="n">prob2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">./</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">.+</span><span class="w"> </span><span class="n">exp</span><span class="o">.</span><span class="p">(</span><span class="o">-</span><span class="n">logits</span><span class="p">))</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="n">rand</span><span class="p">(</span><span class="n">rng</span><span class="p">,</span><span class="w"> </span><span class="n">Binomial</span><span class="p">(</span><span class="n">n_trials</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="w"> </span><span class="n">prob2</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="mi">1</span><span class="o">:</span><span class="n">n_samples</span><span class="p">]</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">X</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">n_trials</span><span class="p">,</span><span class="w"> </span><span class="n">prob2</span>
+<span class="k">end</span>
+
+
+<span class="n">n_samples</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10000</span>
+<span class="n">true_beta</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="p">[</span><span class="o">-</span><span class="mf">3.0</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="mf">2.6</span><span class="p">]</span>
+
+<span class="n">X</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">n_trials</span><span class="p">,</span><span class="n">prob2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">generate_synthetic_binomial_data</span><span class="p">(</span><span class="n">n_samples</span><span class="p">,</span><span class="w"> </span><span class="n">true_beta</span><span class="p">);</span>
+<span class="n">X</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="n">collect</span><span class="p">(</span><span class="n">row</span><span class="p">)</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">row</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">eachrow</span><span class="p">(</span><span class="n">X</span><span class="p">)];</span>
+
+<span class="nd">@model</span><span class="w"> </span><span class="k">function</span><span class="w"> </span><span class="n">binomial_model</span><span class="p">(</span><span class="n">prior_xi</span><span class="p">,</span><span class="w"> </span><span class="n">prior_precision</span><span class="p">,</span><span class="w"> </span><span class="n">n_trials</span><span class="p">,</span><span class="w"> </span><span class="n">X</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">)</span>
+<span class="w">    </span><span class="n">println</span><span class="p">(</span><span class="s">"hello"</span><span class="p">)</span><span class="w"> </span>
+<span class="w">    </span><span class="n">β</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">MvNormalWeightedMeanPrecision</span><span class="p">(</span><span class="n">prior_xi</span><span class="p">,</span><span class="w"> </span><span class="n">prior_precision</span><span class="p">)</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">eachindex</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="w">        </span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">BinomialPolya</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="w"> </span><span class="n">n_trials</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="w"> </span><span class="n">β</span><span class="p">)</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="kt">dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">RequireMessageFunctionalDependencies</span><span class="p">(</span><span class="kt">β</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">MvNormalWeightedMeanPrecision</span><span class="p">(</span><span class="kt">prior_xi</span><span class="p">,</span><span class="w"> </span><span class="kt">prior_precision</span><span class="p">))</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="k">end</span>
+<span class="w">    </span><span class="n">println</span><span class="p">(</span><span class="n">β</span><span class="p">[</span><span class="ss">:weightedmean_precision</span><span class="p">]</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="n">typeof</span><span class="p">)</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">β</span>
+<span class="k">end</span>
+
+<span class="n">β</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">binomial_model</span><span class="p">(</span><span class="n">prior_xi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">zeros</span><span class="p">(</span><span class="n">n_features</span><span class="p">),</span><span class="w"> </span><span class="n">prior_precision</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">diageye</span><span class="p">(</span><span class="n">n_features</span><span class="p">),</span><span class="n">X</span><span class="o">=</span><span class="n">X</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span><span class="n">n_trials</span><span class="o">=</span><span class="n">n_trials</span><span class="p">);</span>
+
+<span class="n">n_features</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">length</span><span class="p">(</span><span class="n">true_beta</span><span class="p">)</span>
 <span class="n">results</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">infer</span><span class="p">(</span>
 <span class="w">    </span><span class="n">model</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">binomial_model</span><span class="p">(</span><span class="n">prior_xi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">zeros</span><span class="p">(</span><span class="n">n_features</span><span class="p">),</span><span class="w"> </span><span class="n">prior_precision</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">diageye</span><span class="p">(</span><span class="n">n_features</span><span class="p">),),</span>
 <span class="w">    </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">X</span><span class="o">=</span><span class="n">X</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span><span class="n">n_trials</span><span class="o">=</span><span class="n">n_trials</span><span class="p">),</span>
@@ -10979,18 +11501,311 @@ invd: Gamma{Float64}(α=0.5, θ=2.0)
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>hello
+GraphPPL.NodeLabel
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre><span class="ansi-green-fg">Progress: 100%|█████████████████████████████████████████| Time: 0:00:02</span>
-</pre>
+<pre>
+RuleMethodError: no method matching rule for the given arguments
+
+Possible fix, define:
+
+@rule BinomialPolya(:β, Marginalisation) (q_y::PointMass, q_x::PointMass, q_n::PointMass, ) = begin 
+    return ...
+end
+
+Alternatively, consider re-specifying model using an existing rule:
+
+BinomialPolya(m_β::Union{NormalDistributionsFamily{T}, GaussianDistributionsFamily{T}} where T)
+BinomialPolya(q_x::PointMass, q_n::PointMass, q_β::Union{NormalDistributionsFamily{T}, GaussianDistributionsFamily{T}} where T)
+BinomialPolya(q_y::Union{PointMass, Multinomial}, q_x::PointMass, q_n::PointMass)
+
+Note that for marginal rules (i.e., involving q_*), the order of input types matters.
+
+
+Stacktrace:
+  [1] (::ReactiveMP.MessageMapping{BinomialPolya, Val{:β}, Marginalisation, Nothing, Val{(:y, :x, :n)}, Nothing, Nothing, Nothing, Nothing})(messages::Nothing, marginals::Tuple{Marginal{PointMass{Int64}, Nothing}, Marginal{PointMass{Vector{Float64}}, Nothing}, Marginal{PointMass{Int64}, Nothing}})
+    @ ReactiveMP ~/.julia/packages/ReactiveMP/KHgtf/src/message.jl:357
+  [2] as_message(message::DeferredMessage{Nothing, Tuple{ReactiveMP.MarginalObservable, ReactiveMP.MarginalObservable, ReactiveMP.MarginalObservable}, ReactiveMP.MessageMapping{BinomialPolya, Val{:β}, Marginalisation, Nothing, Val{(:y, :x, :n)}, Nothing, Nothing, Nothing, Nothing}}, cache::Nothing, messages::Nothing, marginals::Tuple{Marginal{PointMass{Int64}, Nothing}, Marginal{PointMass{Vector{Float64}}, Nothing}, Marginal{PointMass{Int64}, Nothing}})
+    @ ReactiveMP ~/.julia/packages/ReactiveMP/KHgtf/src/message.jl:235
+  [3] as_message(message::DeferredMessage{Nothing, Tuple{ReactiveMP.MarginalObservable, ReactiveMP.MarginalObservable, ReactiveMP.MarginalObservable}, ReactiveMP.MessageMapping{BinomialPolya, Val{:β}, Marginalisation, Nothing, Val{(:y, :x, :n)}, Nothing, Nothing, Nothing, Nothing}}, cache::Nothing)
+    @ ReactiveMP ~/.julia/packages/ReactiveMP/KHgtf/src/message.jl:231
+  [4] as_message(message::DeferredMessage{Nothing, Tuple{ReactiveMP.MarginalObservable, ReactiveMP.MarginalObservable, ReactiveMP.MarginalObservable}, ReactiveMP.MessageMapping{BinomialPolya, Val{:β}, Marginalisation, Nothing, Val{(:y, :x, :n)}, Nothing, Nothing, Nothing, Nothing}})
+    @ ReactiveMP ~/.julia/packages/ReactiveMP/KHgtf/src/message.jl:223
+  [5] MappingRF
+    @ ./reduce.jl:100 [inlined]
+  [6] _foldl_impl(op::Base.MappingRF{typeof(as_message), Base.BottomRF{ReactiveMP.var"#16#18"{GenericProd}}}, init::Base._InitialValue, itr::Vector{AbstractMessage})
+    @ Base ./reduce.jl:62
+  [7] foldl_impl
+    @ ./reduce.jl:48 [inlined]
+  [8] mapfoldl_impl
+    @ ./reduce.jl:44 [inlined]
+  [9] mapfoldl
+    @ ./reduce.jl:175 [inlined]
+ [10] foldl
+    @ ./reduce.jl:198 [inlined]
+ [11] (::ReactiveMP.var"#15#17"{GenericProd, CompositeFormConstraint{Tuple{UnspecifiedFormConstraint, RxInfer.EnsureSupportedFunctionalForm}}})(messages::Vector{AbstractMessage})
+    @ ReactiveMP ~/.julia/packages/ReactiveMP/KHgtf/src/message.jl:149
+ [12] (::ReactiveMP.var"#119#120"{ReactiveMP.var"#15#17"{GenericProd, CompositeFormConstraint{Tuple{UnspecifiedFormConstraint, RxInfer.EnsureSupportedFunctionalForm}}}})(messages::Vector{AbstractMessage})
+    @ ReactiveMP ~/.julia/packages/ReactiveMP/KHgtf/src/variables/variable.jl:36
+ [13] next_received!(wrapper::Rocket.CollectLatestObservableWrapper{AbstractMessage, Rocket.RecentSubjectInstance{Marginal, Subject{Marginal, AsapScheduler, AsapScheduler}}, Vector{AbstractMessage}, BitVector, Vector{Teardown}, ReactiveMP.var"#119#120"{ReactiveMP.var"#15#17"{GenericProd, CompositeFormConstraint{Tuple{UnspecifiedFormConstraint, RxInfer.EnsureSupportedFunctionalForm}}}}, typeof(ReactiveMP.reset_vstatus)}, data::DeferredMessage{Nothing, Tuple{ReactiveMP.MarginalObservable, ReactiveMP.MarginalObservable, ReactiveMP.MarginalObservable}, ReactiveMP.MessageMapping{BinomialPolya, Val{:β}, Marginalisation, Nothing, Val{(:y, :x, :n)}, Nothing, Nothing, Nothing, Nothing}}, index::CartesianIndex{1})
+    @ Rocket ~/.julia/packages/Rocket/Qsjhz/src/observable/collected.jl:103
+ [14] on_next!
+    @ ~/.julia/packages/Rocket/Qsjhz/src/observable/collected.jl:93 [inlined]
+ [15] scheduled_next!(actor::Rocket.CollectLatestObservableInnerActor{AbstractMessage, CartesianIndex{1}, Rocket.CollectLatestObservableWrapper{AbstractMessage, Rocket.RecentSubjectInstance{Marginal, Subject{Marginal, AsapScheduler, AsapScheduler}}, Vector{AbstractMessage}, BitVector, Vector{Teardown}, ReactiveMP.var"#119#120"{ReactiveMP.var"#15#17"{GenericProd, CompositeFormConstraint{Tuple{UnspecifiedFormConstraint, RxInfer.EnsureSupportedFunctionalForm}}}}, typeof(ReactiveMP.reset_vstatus)}}, value::DeferredMessage{Nothing, Tuple{ReactiveMP.MarginalObservable, ReactiveMP.MarginalObservable, ReactiveMP.MarginalObservable}, ReactiveMP.MessageMapping{BinomialPolya, Val{:β}, Marginalisation, Nothing, Val{(:y, :x, :n)}, Nothing, Nothing, Nothing, Nothing}}, ::AsapScheduler)
+    @ Rocket ~/.julia/packages/Rocket/Qsjhz/src/schedulers/asap.jl:23
+ [16] on_next!(subject::Subject{AbstractMessage, AsapScheduler, AsapScheduler}, data::DeferredMessage{Nothing, Tuple{ReactiveMP.MarginalObservable, ReactiveMP.MarginalObservable, ReactiveMP.MarginalObservable}, ReactiveMP.MessageMapping{BinomialPolya, Val{:β}, Marginalisation, Nothing, Val{(:y, :x, :n)}, Nothing, Nothing, Nothing, Nothing}})
+    @ Rocket ~/.julia/packages/Rocket/Qsjhz/src/subjects/subject.jl:62
+ [17] actor_on_next!
+    @ ~/.julia/packages/Rocket/Qsjhz/src/actor.jl:250 [inlined]
+ [18] next!
+    @ ~/.julia/packages/Rocket/Qsjhz/src/actor.jl:202 [inlined]
+ [19] on_next!
+    @ ~/.julia/packages/Rocket/Qsjhz/src/subjects/recent.jl:62 [inlined]
+ [20] #7
+    @ ~/.julia/packages/RxInfer/dt0ny/src/rocket.jl:86 [inlined]
+ [21] limitstack(callback::RxInfer.var"#7#8"{Rocket.RecentSubjectInstance{AbstractMessage, Subject{AbstractMessage, AsapScheduler, AsapScheduler}}, DeferredMessage{Nothing, Tuple{ReactiveMP.MarginalObservable, ReactiveMP.MarginalObservable, ReactiveMP.MarginalObservable}, ReactiveMP.MessageMapping{BinomialPolya, Val{:β}, Marginalisation, Nothing, Val{(:y, :x, :n)}, Nothing, Nothing, Nothing, Nothing}}}, instance::RxInfer.LimitStackScheduler)
+    @ RxInfer ~/.julia/packages/RxInfer/dt0ny/src/rocket.jl:52
+ [22] scheduled_next!
+    @ ~/.julia/packages/RxInfer/dt0ny/src/rocket.jl:86 [inlined]
+ [23] actor_on_next!
+    @ ~/.julia/packages/Rocket/Qsjhz/src/actor.jl:255 [inlined]
+ [24] next!
+    @ ~/.julia/packages/Rocket/Qsjhz/src/actor.jl:203 [inlined]
+ [25] on_next!
+    @ ~/.julia/packages/Rocket/Qsjhz/src/observable/scheduled.jl:12 [inlined]
+ [26] next!
+    @ ~/.julia/packages/Rocket/Qsjhz/src/actor.jl:206 [inlined]
+ [27] on_next!
+    @ ~/.julia/packages/Rocket/Qsjhz/src/operators/map.jl:62 [inlined]
+ [28] next!
+    @ ~/.julia/packages/Rocket/Qsjhz/src/actor.jl:206 [inlined]
+ [29] next_received!
+    @ ~/.julia/packages/Rocket/Qsjhz/src/observable/combined.jl:101 [inlined]
+ [30] on_next!
+    @ ~/.julia/packages/Rocket/Qsjhz/src/observable/combined.jl:68 [inlined]
+ [31] next!
+    @ ~/.julia/packages/Rocket/Qsjhz/src/actor.jl:206 [inlined]
+ [32] next_received!
+    @ ~/.julia/packages/Rocket/Qsjhz/src/observable/combined_updates.jl:72 [inlined]
+ [33] on_next!
+    @ ~/.julia/packages/Rocket/Qsjhz/src/observable/combined_updates.jl:34 [inlined]
+ [34] scheduled_next!(actor::Rocket.CombineLatestUpdatesInnerActor{Marginal, Rocket.CombineLatestUpdatesActorWrapper{Tuple{ReactiveMP.MarginalObservable, ReactiveMP.MarginalObservable, ReactiveMP.MarginalObservable}, Rocket.CombineLatestInnerActor{Tuple{ReactiveMP.MarginalObservable, ReactiveMP.MarginalObservable, ReactiveMP.MarginalObservable}, Rocket.CombineLatestActorWrapper{Rocket.MStorage2{Nothing, Tuple{ReactiveMP.MarginalObservable, ReactiveMP.MarginalObservable, ReactiveMP.MarginalObservable}}, Rocket.MapActor{Tuple{Nothing, Tuple{ReactiveMP.MarginalObservable, ReactiveMP.MarginalObservable, ReactiveMP.MarginalObservable}}, Rocket.ScheduledActor{AbstractMessage, RxInfer.LimitStackScheduler, Rocket.RecentSubjectInstance{AbstractMessage, Subject{AbstractMessage, AsapScheduler, AsapScheduler}}}, ReactiveMP.var"#182#185"{ReactiveMP.MessageMapping{BinomialPolya, Val{:β}, Marginalisation, Nothing, Val{(:y, :x, :n)}, Nothing, Nothing, Nothing, Nothing}}}, PushNew, Rocket.UInt8UpdatesStatus}}, PushNew, Rocket.UInt8UpdatesStatus, typeof(identity), Nothing}}, value::Marginal{PointMass{Int64}, Nothing}, ::AsapScheduler)
+    @ Rocket ~/.julia/packages/Rocket/Qsjhz/src/schedulers/asap.jl:23
+ [35] on_next!(subject::Subject{Marginal, AsapScheduler, AsapScheduler}, data::Marginal{PointMass{Int64}, Nothing})
+    @ Rocket ~/.julia/packages/Rocket/Qsjhz/src/subjects/subject.jl:62
+ [36] actor_on_next!
+    @ ~/.julia/packages/Rocket/Qsjhz/src/actor.jl:250 [inlined]
+ [37] next!
+    @ ~/.julia/packages/Rocket/Qsjhz/src/actor.jl:202 [inlined]
+ [38] on_next!
+    @ ~/.julia/packages/Rocket/Qsjhz/src/subjects/recent.jl:62 [inlined]
+ [39] actor_on_next!
+    @ ~/.julia/packages/Rocket/Qsjhz/src/actor.jl:250 [inlined]
+ [40] next!
+    @ ~/.julia/packages/Rocket/Qsjhz/src/actor.jl:202 [inlined]
+ [41] on_next!
+    @ ~/.julia/packages/Rocket/Qsjhz/src/operators/map.jl:62 [inlined]
+ [42] scheduled_next!(actor::Rocket.MapActor{Message, Rocket.RecentSubjectInstance{Marginal, Subject{Marginal, AsapScheduler, AsapScheduler}}, typeof(as_marginal)}, value::Message{PointMass{Int64}, Nothing}, ::AsapScheduler)
+    @ Rocket ~/.julia/packages/Rocket/Qsjhz/src/schedulers/asap.jl:23
+ [43] on_next!(subject::Subject{Message, AsapScheduler, AsapScheduler}, data::Message{PointMass{Int64}, Nothing})
+    @ Rocket ~/.julia/packages/Rocket/Qsjhz/src/subjects/subject.jl:62
+ [44] actor_on_next!
+    @ ~/.julia/packages/Rocket/Qsjhz/src/actor.jl:250 [inlined]
+ [45] next!
+    @ ~/.julia/packages/Rocket/Qsjhz/src/actor.jl:202 [inlined]
+ [46] on_next!
+    @ ~/.julia/packages/Rocket/Qsjhz/src/subjects/recent.jl:62 [inlined]
+ [47] actor_on_next!
+    @ ~/.julia/packages/Rocket/Qsjhz/src/actor.jl:250 [inlined]
+ [48] next!
+    @ ~/.julia/packages/Rocket/Qsjhz/src/actor.jl:202 [inlined]
+ [49] update!
+    @ ~/.julia/packages/ReactiveMP/KHgtf/src/variables/data.jl:85 [inlined]
+ [50] update!
+    @ ~/.julia/packages/ReactiveMP/KHgtf/src/variables/data.jl:84 [inlined]
+ [51] #137
+    @ ~/.julia/packages/ReactiveMP/KHgtf/src/variables/data.jl:93 [inlined]
+ [52] foreach
+    @ ./abstractarray.jl:3187 [inlined]
+ [53] update!(datavars::Vector{DataVariable{Rocket.RecentSubjectInstance{Message, Subject{Message, AsapScheduler, AsapScheduler}}, ReactiveMP.MarginalObservable}}, data::Vector{Int64})
+    @ ReactiveMP ~/.julia/packages/ReactiveMP/KHgtf/src/variables/data.jl:92
+ [54] batch_inference(; model::GraphPPL.ModelGenerator{typeof(binomial_model), @Kwargs{prior_xi::Vector{Float64}, prior_precision::Matrix{Float64}}, GraphPPL.PluginsCollection{Tuple{}}, RxInfer.ReactiveMPGraphPPLBackend{Static.False}, String}, data::@NamedTuple{X::Vector{Vector{Float64}}, y::Vector{Int64}, n_trials::Vector{Int64}}, initialization::Nothing, constraints::Nothing, meta::Nothing, options::@NamedTuple{limit_stack_depth::Int64}, returnvars::Nothing, predictvars::Nothing, iterations::Int64, free_energy::Bool, free_energy_diagnostics::Tuple{RxInfer.ObjectiveDiagnosticCheckNaNs, RxInfer.ObjectiveDiagnosticCheckInfs}, allow_node_contraction::Bool, showprogress::Bool, callbacks::Nothing, addons::Nothing, postprocess::DefaultPostprocess, warn::Bool, catch_exception::Bool)
+    @ RxInfer ~/.julia/packages/RxInfer/dt0ny/src/inference/batch.jl:304
+ [55] batch_inference
+    @ ~/.julia/packages/RxInfer/dt0ny/src/inference/batch.jl:96 [inlined]
+ [56] #288
+    @ ~/.julia/packages/RxInfer/dt0ny/src/inference/inference.jl:532 [inlined]
+ [57] with_session(f::RxInfer.var"#288#290"{GraphPPL.ModelGenerator{typeof(binomial_model), @Kwargs{prior_xi::Vector{Float64}, prior_precision::Matrix{Float64}}, GraphPPL.PluginsCollection{Tuple{}}, RxInfer.ReactiveMPGraphPPLBackend{Static.False}, String}, @NamedTuple{X::Vector{Vector{Float64}}, y::Vector{Int64}, n_trials::Vector{Int64}}, Nothing, Nothing, Nothing, Nothing, Nothing, @NamedTuple{limit_stack_depth::Int64}, Nothing, Nothing, Nothing, Nothing, Int64, Bool, Tuple{RxInfer.ObjectiveDiagnosticCheckNaNs, RxInfer.ObjectiveDiagnosticCheckInfs}, Bool, Bool, Bool, Nothing, Nothing, DefaultPostprocess, Nothing, Bool, Bool, Bool}, session::RxInfer.Session, label::Symbol)
+    @ RxInfer ~/.julia/packages/RxInfer/dt0ny/src/session.jl:253
+ [58] #infer#287
+    @ ~/.julia/packages/RxInfer/dt0ny/src/inference/inference.jl:502 [inlined]</pre>
 </div>
 </div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=c7a45b58">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [105]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-julia"><pre><span></span><span class="o">?</span><span class="n">GraphPPL</span><span class="o">.</span><span class="n">NodeLabel</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[6]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[105]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/markdown" tabindex="0">
+<p>!!! warning
+The following bindings may be internal; they may change or be removed in future versions:</p>
+<pre><code>  * `GraphPPL.NodeLabel`</code></pre>
+<pre><code>NodeLabel(name, global_counter::Int64)
+</code></pre>
+<p>Unique identifier for a node (factor or variable) in a probabilistic graphical model.</p>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=d2068567">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [102]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-julia"><pre><span></span><span class="n">β</span><span class="p">[</span><span class="ss">:weightedmean_precision</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
+<pre>
+MethodError: no method matching getindex(::GraphPPL.ModelGenerator{typeof(binomial_model), Base.Pairs{Symbol, Array, NTuple{5, Symbol}, @NamedTuple{prior_xi::Vector{Float64}, prior_precision::Matrix{Float64}, X::Vector{Vector{Float64}}, y::Vector{Int64}, n_trials::Vector{Int64}}}, GraphPPL.PluginsCollection{Tuple{}}, RxInfer.ReactiveMPGraphPPLBackend{Static.False}, String}, ::Symbol)
+The function `getindex` exists, but no method is defined for this combination of argument types.
+
+Stacktrace:
+ [1] top-level scope
+   @ In[102]:1</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=d6dba2aa">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [98]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-julia"><pre><span></span><span class="n">names</span><span class="p">(</span><span class="n">RxInfer</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[98]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>Inference results:
-  Posteriors       | available for (β)
-  Free Energy:     | Real[21992.9, 16235.8, 13785.0, 12519.7, 11800.1, 11366.2, 11094.1, 10918.7, 10803.3, 10726.3  …  10561.6, 10560.6, 10559.9, 10559.4, 10559.0, 10558.8, 10558.6, 10558.5, 10558.4, 10558.3]
-</pre>
+<pre>847-element Vector{Symbol}:
+ Symbol("@autoupdates")
+ Symbol("@average_energy")
+ Symbol("@call_marginalrule")
+ Symbol("@call_rule")
+ Symbol("@constraints")
+ Symbol("@initialization")
+ Symbol("@logscale")
+ Symbol("@marginalrule")
+ Symbol("@meta")
+ Symbol("@model")
+ Symbol("@node")
+ Symbol("@rule")
+ :AND
+ ⋮
+ :weightedmean
+ :weightedmean_cov
+ :weightedmean_invcov
+ :weightedmean_precision
+ :weightedmean_std
+ :weightedmean_var
+ :weights
+ :with_latest
+ :wsample
+ :wsample!
+ :xtlog
+ :zipped</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=63c66fde">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [93]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-julia"><pre><span></span><span class="o">?</span><span class="n">GraphPPL</span><span class="o">.</span><span class="nd">@model</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[93]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/markdown" tabindex="0">
+<p>!!! warning
+The following bindings may be internal; they may change or be removed in future versions:</p>
+<pre><code>  * `GraphPPL.@model`</code></pre>
+<pre><code>@model function model_name(model_arguments)
+    ...
+end
+</code></pre>
+<p>Note that the <code>@model</code> macro is not exported by default and the recommended way of using it is  in the combination with some inference backend. The <code>GraphPPL</code> package provides the <code>DefaultGraphPPLBackend</code> structure  for plotting and test purposes, but some backends may specify different behaviour for different structures. For example, the interface names of a node <code>Normal</code> or its behaviour may (and should) depend on the specified backend.</p>
+<p>The recommended way of using the <code>GraphPPL.@model</code> macro from other backend-based packages is to define their own  <code>@model</code> macro, which will call the <code>GraphPPL.model_macro_interior</code> function with the specified backend. For example</p>
+<div class="highlight"><pre><span></span><span class="k">module</span><span class="w"> </span><span class="n">SamplingBasedInference</span>
+
+<span class="k">struct</span> <span class="kt">SamplingBasedBackend</span><span class="w"> </span><span class="k">end</span>
+
+<span class="k">macro</span><span class="w"> </span><span class="n">model</span><span class="p">(</span><span class="n">model_specification</span><span class="p">)</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">esc</span><span class="p">(</span><span class="n">GraphPPL</span><span class="o">.</span><span class="n">model_macro_interior</span><span class="p">(</span><span class="n">SamplingBasedBackend</span><span class="p">(),</span><span class="w"> </span><span class="n">model_specification</span><span class="p">))</span>
+<span class="k">end</span>
+
+<span class="k">end</span>
+</pre></div>
+<p>Read more about the backend inteface in the corresponding section of the documentation.</p>
+<p>To use <code>GraphPPL</code> package as a standalone package for plotting and testing, use the <code>import GraphPPL: @model</code> explicitly to add  the <code>@model</code> macro to the current scope.</p>
 </div>
 </div>
 </div>
@@ -11000,7 +11815,7 @@ invd: Gamma{Float64}(α=0.5, θ=2.0)
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-julia"><pre><span></span><span class="n">plot</span><span class="p">(</span><span class="n">results</span><span class="o">.</span><span class="n">free_energy</span><span class="p">,</span><span class="n">fontfamily</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Computer Modern"</span><span class="p">,</span><span class="w"> </span><span class="n">label</span><span class="o">=</span><span class="s">"Free Energy"</span><span class="p">,</span><span class="w"> </span><span class="n">xlabel</span><span class="o">=</span><span class="s">"Iteration"</span><span class="p">,</span><span class="w"> </span><span class="n">ylabel</span><span class="o">=</span><span class="s">"Free Energy"</span><span class="p">,</span><span class="w"> </span><span class="n">title</span><span class="o">=</span><span class="s">"Free Energy Convergence"</span><span class="p">)</span>
@@ -11014,7 +11829,7 @@ invd: Gamma{Float64}(α=0.5, θ=2.0)
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[7]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <?xml version="1.0" encoding="utf-8"?>
 <svg height="400" viewbox="0 0 2400 1600" width="600" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -11071,10 +11886,35 @@ invd: Gamma{Float64}(α=0.5, θ=2.0)
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-julia"><pre><span></span><span class="mi">2</span><span class="o">+</span><span class="mi">2</span>
+<div class="highlight hl-julia"><pre><span></span><span class="n">ci</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">CartesianIndices</span><span class="p">(</span><span class="n">zeros</span><span class="p">(</span><span class="n">J</span><span class="p">))</span>
+<span class="nd">@model</span><span class="w"> </span><span class="k">function</span><span class="w"> </span><span class="n">binomial_model</span><span class="p">(</span><span class="n">y</span><span class="o">::</span><span class="kt">Vector</span><span class="p">{</span><span class="o">&lt;:</span><span class="kt">Real</span><span class="p">})</span><span class="w"> </span>
+<span class="w">    </span><span class="n">β</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">MvNormalMeanCovariance</span><span class="p">(</span><span class="n">zeros</span><span class="p">(</span><span class="mi">4</span><span class="p">),</span><span class="w"> </span><span class="n">diageye</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span><span class="w"> </span><span class="c">#Gelman spec-d uniform, can't do that here</span>
+<span class="w">    </span><span class="n">print</span><span class="p">(</span><span class="s">"hello2"</span><span class="p">)</span>
+<span class="w">    </span><span class="n">σ⁰</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">InverseGamma</span><span class="p">(</span><span class="n">ν</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">ν</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">σ₀</span><span class="o">^</span><span class="mi">2</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="c"># this is Scale Inverse Chi Squared distribution as Gelman spec-d</span>
+<span class="w">    </span><span class="n">print</span><span class="p">(</span><span class="s">"hello3"</span><span class="p">)</span>
+<span class="w">    </span><span class="n">α⁰</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">Normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">σ⁰</span><span class="p">)</span>
+<span class="w">    </span><span class="n">print</span><span class="p">(</span><span class="s">"hello4"</span><span class="p">)</span>
+<span class="w">    </span><span class="n">αⱼ</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">Normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">σ⁰</span><span class="p">)</span>
+<span class="w">    </span><span class="n">print</span><span class="p">(</span><span class="s">"hello5"</span><span class="p">)</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">eachindex</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="w">        </span><span class="n">j₁</span><span class="p">,</span><span class="n">j₂</span><span class="p">,</span><span class="n">j₃</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ci</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="kt">Tuple</span>
+<span class="w">        </span><span class="n">Σα</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">α⁰</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">αⱼ</span>
+<span class="w">        </span><span class="c"># Currently trying to add to const term instead of TODO.</span>
+<span class="w">        </span><span class="c"># βj := β + vcat(Σα[j],zeros(3)) #TODO: needs expanded β with zeros. Expanded X with another ones column.</span>
+<span class="w">        </span><span class="n">y</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">BinomialPolya</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">j</span><span class="p">],</span><span class="w"> </span><span class="n">N</span><span class="p">[</span><span class="n">j</span><span class="p">],</span><span class="w"> </span><span class="n">β</span><span class="p">)</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="kt">dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">RequireMessageFunctionalDependencies</span><span class="p">(</span>
+<span class="w">                </span><span class="kt">β</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">MvNormalMeanCovariance</span><span class="p">(</span><span class="kt">zeros</span><span class="p">(</span><span class="mi">4</span><span class="p">),</span><span class="w"> </span><span class="kt">diageye</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
+<span class="w">            </span><span class="p">)</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="k">end</span>
+<span class="k">end</span>
+
+<span class="n">model_generator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">binomial_model</span><span class="p">()</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="p">(</span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">y</span><span class="p">,)</span>
+<span class="n">model_to_plot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">RxInfer</span><span class="o">.</span><span class="n">getmodel</span><span class="p">(</span><span class="n">RxInfer</span><span class="o">.</span><span class="n">create_model</span><span class="p">(</span><span class="n">model_generator</span><span class="p">))</span>
+<span class="n">GraphViz</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">model_to_plot</span><span class="p">,</span><span class="w"> </span><span class="n">strategy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">:simple</span><span class="p">,</span><span class="w"> </span><span class="n">layout</span><span class="o">=</span><span class="s">"dot"</span><span class="p">,</span><span class="w"> </span><span class="n">width</span><span class="o">=</span><span class="mf">5.</span><span class="p">,</span><span class="n">height</span><span class="o">=</span><span class="mf">5.</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -11085,7 +11925,7 @@ invd: Gamma{Float64}(α=0.5, θ=2.0)
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>4</pre>
 </div>
@@ -11099,7 +11939,48 @@ invd: Gamma{Float64}(α=0.5, θ=2.0)
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Indices">Indices<a class="anchor-link" href="#Indices">¶</a></h1>
+<h1 id="Truncated-normal?">Truncated normal?<a class="anchor-link" href="#Truncated-normal?">¶</a></h1>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=de5045e7">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [125]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-julia"><pre><span></span><span class="o">?</span><span class="n">DeltaMeta</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>search: <span class="ansi-bold">D</span><span class="ansi-bold">e</span><span class="ansi-bold">l</span><span class="ansi-bold">t</span><span class="ansi-bold">a</span><span class="ansi-bold">M</span><span class="ansi-bold">e</span><span class="ansi-bold">t</span><span class="ansi-bold">a</span> FlowMeta <span class="ansi-bold">D</span><span class="ansi-bold">e</span><span class="ansi-bold">l</span><span class="ansi-bold">t</span><span class="ansi-bold">a</span>Fn
+
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[125]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/markdown" tabindex="0">
+<pre><code>DeltaMeta(method = ..., [ inverse = ... ])
+</code></pre>
+<p><code>DeltaMeta</code> structure specifies the approximation method for the outbound messages in the <code>DeltaFn</code> node.</p>
+<h1 id="Arguments">Arguments<a class="anchor-link" href="#Arguments">¶</a></h1><ul>
+<li><code>method</code>: required, the approximation method, currently supported methods are <a href="@ref"><code>Linearization</code></a>, <a href="@ref"><code>Unscented</code></a> and <a href="@ref"><code>CVI</code></a>.</li>
+<li><code>inverse</code>: optional, if no inverse provided, the backward rule will be computed based on RTS (Petersen et al. 2018; On Approximate Delta Gaussian Message Passing on Factor Graphs)</li>
+</ul>
+<p>Is is also possible to pass the <code>AbstractApproximationMethod</code> to the meta of the delta node directly. In this case <code>inverse</code> is set to <code>nothing</code>.</p>
+</div>
 </div>
 </div>
 </div>
@@ -11108,11 +11989,37 @@ invd: Gamma{Float64}(α=0.5, θ=2.0)
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [21]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [124]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-julia"><pre><span></span><span class="n">A</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rand</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
-<span class="n">A</span>
+<div class="highlight hl-julia"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="n">RxInfer</span>
+<span class="k">using</span><span class="w"> </span><span class="n">Distributions</span>
+
+<span class="c"># Define a custom model with truncated normal using an indicator function</span>
+<span class="nd">@model</span><span class="w"> </span><span class="k">function</span><span class="w"> </span><span class="n">truncated_normal_model</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="w">    </span><span class="c"># Latent variable x with Normal prior</span>
+<span class="w">    </span><span class="n">y</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">truncated</span><span class="p">(</span><span class="n">Normal</span><span class="p">(</span><span class="n">mean</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">var</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
+<span class="k">end</span>
+
+<span class="c"># Example observed data</span>
+<span class="n">y_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.5</span>
+
+<span class="c"># Instantiate and run inference</span>
+<span class="n">model</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">truncated_normal_model</span><span class="p">(;</span><span class="n">y_data</span><span class="p">)</span>
+
+<span class="n">results</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">infer</span><span class="p">(</span>
+<span class="w">    </span><span class="n">model</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">truncated_normal_model</span><span class="p">(),</span>
+<span class="w">    </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,),</span>
+<span class="w">    </span><span class="n">iterations</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span>
+<span class="w">    </span><span class="n">free_energy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">,</span>
+<span class="w">    </span><span class="n">showprogress</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">,</span>
+<span class="w">    </span><span class="n">options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span>
+<span class="w">        </span><span class="n">limit_stack_depth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="c"># to prevent stack-overflow errors</span>
+<span class="w">    </span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="n">println</span><span class="p">(</span><span class="s">"Posterior of x with truncation constraint:"</span><span class="p">)</span>
+<span class="n">println</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">posteriors</span><span class="p">[</span><span class="ss">:x</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -11122,28 +12029,66 @@ invd: Gamma{Float64}(α=0.5, θ=2.0)
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[21]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>3×4 Matrix{Float64}:
- 0.259672  0.213303  0.122865  0.839691
- 0.54569   0.948059  0.704467  0.519747
- 0.338335  0.476266  0.421948  0.416316</pre>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
+<pre>
+Delta node `truncated` requires meta specification with the `where { meta = ... }` in the `@model` macro or with the separate `@meta` specification. See documentation for the `DeltaMeta`.
+
+Stacktrace:
+  [1] error(s::String)
+    @ Base ./error.jl:35
+  [2] collect_meta(::Type{DeltaFn{typeof(truncated)}}, something::Nothing)
+    @ ReactiveMP ~/.julia/packages/ReactiveMP/KHgtf/src/nodes/predefined/delta/delta.jl:55
+  [3] activate!(factornode::DeltaFnNode{typeof(truncated), FixedArguments.FixedCallable{typeof(truncated), Tuple{FixedArguments.FixedArgument{FixedArguments.FixedPosition{2}, ConstVariable}, FixedArguments.FixedArgument{FixedArguments.FixedPosition{3}, ConstVariable}}, typeof(ReactiveMP.__unpack_latest_static)}, 1, Tuple{FixedArguments.FixedArgument{FixedArguments.FixedPosition{2}, ConstVariable}, FixedArguments.FixedArgument{FixedArguments.FixedPosition{3}, ConstVariable}}, ReactiveMP.FactorNodeLocalClusters{Tuple{ReactiveMP.FactorNodeLocalMarginal, ReactiveMP.FactorNodeLocalMarginal}, Nothing}}, options::ReactiveMP.FactorNodeActivationOptions{Nothing, Nothing, Nothing, Nothing, RxInfer.LimitStackScheduler, Nothing})
+    @ ReactiveMP ~/.julia/packages/ReactiveMP/KHgtf/src/nodes/predefined/delta/delta.jl:184
+  [4] activate_rmp_factornode!(plugin::RxInfer.ReactiveMPInferencePlugin{RxInfer.ReactiveMPInferenceOptions{RxInfer.LimitStackScheduler, Nothing, Nothing}}, model::GraphPPL.Model{MetaGraphsNext.MetaGraph{Int64, Graphs.SimpleGraphs.SimpleGraph{Int64}, GraphPPL.NodeLabel, GraphPPL.NodeData, GraphPPL.EdgeLabel, GraphPPL.Context, MetaGraphsNext.var"#4#8", Float64}, GraphPPL.PluginsCollection{Tuple{GraphPPL.VariationalConstraintsPlugin{GraphPPL.NoConstraints}, GraphPPL.MetaPlugin{GraphPPL.MetaSpecification}, RxInfer.InitializationPlugin{RxInfer.NoInit}, RxInfer.ReactiveMPInferencePlugin{RxInfer.ReactiveMPInferenceOptions{RxInfer.LimitStackScheduler, Nothing, Nothing}}, RxInfer.ReactiveMPFreeEnergyPlugin{RxInfer.BetheFreeEnergy{Real, SkipInitial, AsapScheduler}}}}, RxInfer.ReactiveMPGraphPPLBackend{Static.False}, String}, nodedata::GraphPPL.NodeData, nodeproperties::GraphPPL.FactorNodeProperties{GraphPPL.NodeData})
+    @ RxInfer ~/.julia/packages/RxInfer/dt0ny/src/model/plugins/reactivemp_inference.jl:232
+  [5] #64
+    @ ~/.julia/packages/RxInfer/dt0ny/src/model/plugins/reactivemp_inference.jl:144 [inlined]
+  [6] factor_nodes(callback::RxInfer.var"#64#68"{RxInfer.ReactiveMPInferencePlugin{RxInfer.ReactiveMPInferenceOptions{RxInfer.LimitStackScheduler, Nothing, Nothing}}, GraphPPL.Model{MetaGraphsNext.MetaGraph{Int64, Graphs.SimpleGraphs.SimpleGraph{Int64}, GraphPPL.NodeLabel, GraphPPL.NodeData, GraphPPL.EdgeLabel, GraphPPL.Context, MetaGraphsNext.var"#4#8", Float64}, GraphPPL.PluginsCollection{Tuple{GraphPPL.VariationalConstraintsPlugin{GraphPPL.NoConstraints}, GraphPPL.MetaPlugin{GraphPPL.MetaSpecification}, RxInfer.InitializationPlugin{RxInfer.NoInit}, RxInfer.ReactiveMPInferencePlugin{RxInfer.ReactiveMPInferenceOptions{RxInfer.LimitStackScheduler, Nothing, Nothing}}, RxInfer.ReactiveMPFreeEnergyPlugin{RxInfer.BetheFreeEnergy{Real, SkipInitial, AsapScheduler}}}}, RxInfer.ReactiveMPGraphPPLBackend{Static.False}, String}}, model::GraphPPL.Model{MetaGraphsNext.MetaGraph{Int64, Graphs.SimpleGraphs.SimpleGraph{Int64}, GraphPPL.NodeLabel, GraphPPL.NodeData, GraphPPL.EdgeLabel, GraphPPL.Context, MetaGraphsNext.var"#4#8", Float64}, GraphPPL.PluginsCollection{Tuple{GraphPPL.VariationalConstraintsPlugin{GraphPPL.NoConstraints}, GraphPPL.MetaPlugin{GraphPPL.MetaSpecification}, RxInfer.InitializationPlugin{RxInfer.NoInit}, RxInfer.ReactiveMPInferencePlugin{RxInfer.ReactiveMPInferenceOptions{RxInfer.LimitStackScheduler, Nothing, Nothing}}, RxInfer.ReactiveMPFreeEnergyPlugin{RxInfer.BetheFreeEnergy{Real, SkipInitial, AsapScheduler}}}}, RxInfer.ReactiveMPGraphPPLBackend{Static.False}, String})
+    @ GraphPPL ~/.julia/packages/GraphPPL/xPNyo/src/graph_engine.jl:865
+  [7] postprocess_plugin
+    @ ~/.julia/packages/RxInfer/dt0ny/src/model/plugins/reactivemp_inference.jl:143 [inlined]
+  [8] (::GraphPPL.var"#97#98"{GraphPPL.Model{MetaGraphsNext.MetaGraph{Int64, Graphs.SimpleGraphs.SimpleGraph{Int64}, GraphPPL.NodeLabel, GraphPPL.NodeData, GraphPPL.EdgeLabel, GraphPPL.Context, MetaGraphsNext.var"#4#8", Float64}, GraphPPL.PluginsCollection{Tuple{GraphPPL.VariationalConstraintsPlugin{GraphPPL.NoConstraints}, GraphPPL.MetaPlugin{GraphPPL.MetaSpecification}, RxInfer.InitializationPlugin{RxInfer.NoInit}, RxInfer.ReactiveMPInferencePlugin{RxInfer.ReactiveMPInferenceOptions{RxInfer.LimitStackScheduler, Nothing, Nothing}}, RxInfer.ReactiveMPFreeEnergyPlugin{RxInfer.BetheFreeEnergy{Real, SkipInitial, AsapScheduler}}}}, RxInfer.ReactiveMPGraphPPLBackend{Static.False}, String}})(plugin::RxInfer.ReactiveMPInferencePlugin{RxInfer.ReactiveMPInferenceOptions{RxInfer.LimitStackScheduler, Nothing, Nothing}})
+    @ GraphPPL ~/.julia/packages/GraphPPL/xPNyo/src/graph_engine.jl:2136
+  [9] foreach(f::GraphPPL.var"#97#98"{GraphPPL.Model{MetaGraphsNext.MetaGraph{Int64, Graphs.SimpleGraphs.SimpleGraph{Int64}, GraphPPL.NodeLabel, GraphPPL.NodeData, GraphPPL.EdgeLabel, GraphPPL.Context, MetaGraphsNext.var"#4#8", Float64}, GraphPPL.PluginsCollection{Tuple{GraphPPL.VariationalConstraintsPlugin{GraphPPL.NoConstraints}, GraphPPL.MetaPlugin{GraphPPL.MetaSpecification}, RxInfer.InitializationPlugin{RxInfer.NoInit}, RxInfer.ReactiveMPInferencePlugin{RxInfer.ReactiveMPInferenceOptions{RxInfer.LimitStackScheduler, Nothing, Nothing}}, RxInfer.ReactiveMPFreeEnergyPlugin{RxInfer.BetheFreeEnergy{Real, SkipInitial, AsapScheduler}}}}, RxInfer.ReactiveMPGraphPPLBackend{Static.False}, String}}, itr::GraphPPL.PluginsCollection{Tuple{GraphPPL.VariationalConstraintsPlugin{GraphPPL.NoConstraints}, GraphPPL.MetaPlugin{GraphPPL.MetaSpecification}, RxInfer.InitializationPlugin{RxInfer.NoInit}, RxInfer.ReactiveMPInferencePlugin{RxInfer.ReactiveMPInferenceOptions{RxInfer.LimitStackScheduler, Nothing, Nothing}}, RxInfer.ReactiveMPFreeEnergyPlugin{RxInfer.BetheFreeEnergy{Real, SkipInitial, AsapScheduler}}}})
+    @ Base ./abstractarray.jl:3187
+ [10] add_toplevel_model!
+    @ ~/.julia/packages/GraphPPL/xPNyo/src/graph_engine.jl:2135 [inlined]
+ [11] create_model
+    @ ~/.julia/packages/GraphPPL/xPNyo/src/model_generator.jl:159 [inlined]
+ [12] __infer_create_factor_graph_model
+    @ ~/.julia/packages/RxInfer/dt0ny/src/model/model.jl:140 [inlined]
+ [13] create_model(generator::RxInfer.ConditionedModelGenerator{GraphPPL.ModelGenerator{typeof(truncated_normal_model), @Kwargs{}, GraphPPL.PluginsCollection{Tuple{GraphPPL.VariationalConstraintsPlugin{GraphPPL.NoConstraints}, GraphPPL.MetaPlugin{GraphPPL.MetaSpecification}, RxInfer.InitializationPlugin{RxInfer.NoInit}, RxInfer.ReactiveMPInferencePlugin{RxInfer.ReactiveMPInferenceOptions{RxInfer.LimitStackScheduler, Nothing, Nothing}}, RxInfer.ReactiveMPFreeEnergyPlugin{RxInfer.BetheFreeEnergy{Real, SkipInitial, AsapScheduler}}}}, RxInfer.ReactiveMPGraphPPLBackend{Static.False}, String}, @NamedTuple{y::Vector{Int64}}})
+    @ RxInfer ~/.julia/packages/RxInfer/dt0ny/src/model/model.jl:128
+ [14] batch_inference(; model::GraphPPL.ModelGenerator{typeof(truncated_normal_model), @Kwargs{}, GraphPPL.PluginsCollection{Tuple{}}, RxInfer.ReactiveMPGraphPPLBackend{Static.False}, String}, data::@NamedTuple{y::Vector{Int64}}, initialization::Nothing, constraints::Nothing, meta::Nothing, options::@NamedTuple{limit_stack_depth::Int64}, returnvars::Nothing, predictvars::Nothing, iterations::Int64, free_energy::Bool, free_energy_diagnostics::Tuple{RxInfer.ObjectiveDiagnosticCheckNaNs, RxInfer.ObjectiveDiagnosticCheckInfs}, allow_node_contraction::Bool, showprogress::Bool, callbacks::Nothing, addons::Nothing, postprocess::DefaultPostprocess, warn::Bool, catch_exception::Bool)
+    @ RxInfer ~/.julia/packages/RxInfer/dt0ny/src/inference/batch.jl:203
+ [15] batch_inference
+    @ ~/.julia/packages/RxInfer/dt0ny/src/inference/batch.jl:96 [inlined]
+ [16] #288
+    @ ~/.julia/packages/RxInfer/dt0ny/src/inference/inference.jl:532 [inlined]
+ [17] with_session(f::RxInfer.var"#288#290"{GraphPPL.ModelGenerator{typeof(truncated_normal_model), @Kwargs{}, GraphPPL.PluginsCollection{Tuple{}}, RxInfer.ReactiveMPGraphPPLBackend{Static.False}, String}, @NamedTuple{y::Vector{Int64}}, Nothing, Nothing, Nothing, Nothing, Nothing, @NamedTuple{limit_stack_depth::Int64}, Nothing, Nothing, Nothing, Nothing, Int64, Bool, Tuple{RxInfer.ObjectiveDiagnosticCheckNaNs, RxInfer.ObjectiveDiagnosticCheckInfs}, Bool, Bool, Bool, Nothing, Nothing, DefaultPostprocess, Nothing, Bool, Bool, Bool}, session::RxInfer.Session, label::Symbol)
+    @ RxInfer ~/.julia/packages/RxInfer/dt0ny/src/session.jl:253
+ [18] #infer#287
+    @ ~/.julia/packages/RxInfer/dt0ny/src/inference/inference.jl:502 [inlined]
+ [19] top-level scope
+    @ In[124]:16</pre>
 </div>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=bfa1c476">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=83724d81">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [22]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [122]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-julia"><pre><span></span><span class="n">ci</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">CartesianIndices</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
-<span class="n">cart_index</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ci</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="w"> </span>
-<span class="n">A</span><span class="p">[</span><span class="n">cart_index</span><span class="p">]</span>
+<div class="highlight hl-julia"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="n">Distributions</span>
+
+<span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">truncated</span><span class="p">(</span><span class="n">Normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -11154,9 +12099,9 @@ invd: Gamma{Float64}(α=0.5, θ=2.0)
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[22]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[122]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>0.21330265646780877</pre>
+<pre>Truncated(Normal{Float64}(μ=0.0, σ=1.0); lower=-1.0, upper=1.0)</pre>
 </div>
 </div>
 </div>
@@ -11166,7 +12111,7 @@ invd: Gamma{Float64}(α=0.5, θ=2.0)
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [23]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-julia"><pre><span></span><span class="n">li</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">LinearIndices</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
@@ -11182,7 +12127,7 @@ invd: Gamma{Float64}(α=0.5, θ=2.0)
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[23]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>0.21330265646780877</pre>
 </div>
