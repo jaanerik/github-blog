@@ -1,70 +1,233 @@
 <style type="text/css">
- #page-title {
-   font-size: 2.5em;
-   font-weight: bold;
- }
- article {
-    max-width: 700px !important; 
-    justify-content: center;
-    padding-inline-end: 0em;
-  }
-
-  .page { 
-    float: none;
-    max-width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
+  /* Global Background & Base Colors */
   body {
-    background: #252a34 !important;
+    background-color: #252a34 !important; /* User preference */
+    color: #c0caf5 !important;
+    /* Palatino/Georgia stack for a more graceful, academic Pandoc-like feel */
+    font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif !important;
+    font-size: 17px !important;
+    line-height: 1.6 !important;
+  }
+
+  /* Headings - keep them crisp and modern like the Bio font */
+  h1, h2, h3, h4, h5, h6, #page-title, .site-title, .author__name,
+  .site-title a, .site-title a:visited, #page-title a, .archive__item-title a {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+    color: #7aa2f7 !important;
+    text-decoration: none !important;
+    font-weight: 700 !important;
+  }
+
+  #page-title {
+    font-size: 2.8em !important;
+    margin-bottom: 0.6em;
+    letter-spacing: -0.03em !important;
   }
 
   p {
     text-align: justify;
-    color: #eee;
+    color: #a9b1d6;
   }
 
-  .highlight .s { color: #eee; }
-
-  .toc {
-    display: none;
-  }
-  .initial-content {
-    flex: 1 0 auto;
-    width: 100%;
-    margin-right: auto;
-    margin-left: auto;
-    position: relative;
-    padding-right: 16px;
-    padding-left: 16px;
-    max-width: 936px;
+  /* LAYOUT - Stable Two-Column */
+  #main {
+    display: flex !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 100% !important;
+    max-width: 1250px !important;
+    padding: 0 40px !important;
+    gap: 80px !important;
+    box-sizing: border-box !important;
+    justify-content: center;
   }
 
-.site-title {
-  font-size: 20px;
-}
-.jp-OutputArea-output {
-  padding: 0 !important;
-}
-.jp-OutputArea-output pre {
-  background: #252a34;
-}
-pre { 
-  line-height: 125%;
-  background: #1f2335;
-}
-p { text-align: justify; }
-body { color: white !important; font-size: 13px !important; !important; }
-.sidebar li { color: white !important; font-size: 13px !important; !important; }
-.sidebar p { color: white !important; font-size: 13px !important; !important; }
-.sidebar a { color: white !important; font-size: 13px !important; !important; }
-span { color: #eee; }
-.kt, .k { color: #c0caf5 !important; }
-.mi { color: #ff9e64 !important;}
-.p, .o, h1 { color: #eeeeee !important;}
-pre { color: white !important; }
-.jp-OutputArea-prompt, .jp-InputArea-prompt { display: none !important; }
-li { color: #eee !important; }
-code { background-color: #eee; }
+  .sidebar {
+    flex: 0 0 220px !important; /* Fixed width, no scaling */
+    width: 220px !important;
+    display: block !important;
+  }
+
+  .author__avatar {
+    display: none !important; /* Hide profile pic entirely */
+  }
+
+  .page {
+    flex: 0 0 850px !important; /* ABSOLUTELY FIXED WIDTH - No shrinking/growing */
+    width: 850px !important;
+    max-width: 850px !important;
+    min-width: 850px !important; /* Force stability */
+  }
+
+  /* BREAKPOINT - Abruptly hide sidebar when space is tight */
+  /* 220 (sidebar) + 80 (gap) + 850 (page) + 80 (padding) = 1230px */
+  @media (max-width: 1230px) {
+    #main {
+      display: block !important;
+      width: 100% !important;
+      max-width: 850px !important;
+      padding: 0 25px !important;
+    }
+    .sidebar, .custom-sidebar-toc {
+      display: none !important;
+    }
+    .page {
+      width: 100% !important;
+      max-width: 850px !important;
+      min-width: 0 !important; /* Allow shrinking on mobile devices */
+      flex: 0 1 auto !important;
+      margin: 0 auto !important;
+    }
+    #page-title {
+      font-size: 2.2em !important;
+      text-align: center;
+    }
+  }
+
+  /* TOC CLEANUP */
+  .custom-sidebar-toc {
+    display: block !important;
+    margin-top: 30px;
+    padding: 0 !important;
+    border-top: none !important; /* Removed line from above */
+  }
+
+  /* Strip all theme "box" styling from TOC */
+  .custom-sidebar-toc .toc,
+  .custom-sidebar-toc nav,
+  .custom-sidebar-toc header,
+  .custom-sidebar-toc ul,
+  .custom-sidebar-toc li {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    list-style: none !important;
+  }
+
+  .custom-sidebar-toc .toc header {
+    margin-top: 20px;
+    margin-bottom: 15px;
+  }
+
+  .custom-sidebar-toc .toc .nav__title {
+    font-size: 0.75em !important;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #565f89 !important;
+    background: transparent !important;
+    border-bottom: 1px solid #414868; /* Added line below title */
+    padding-bottom: 8px !important;
+    display: block;
+  }
+
+  .custom-sidebar-toc .toc__menu {
+    margin-top: 12px !important;
+  }
+
+  .custom-sidebar-toc .toc__menu li {
+    margin-bottom: 10px !important;
+  }
+
+  .custom-sidebar-toc .toc__menu a {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+    color: #c0caf5 !important; /* Brighter default color */
+    text-decoration: none;
+    font-size: 1.3em;
+    line-height: 1.4;
+    display: block;
+    padding: 6px 0;
+    border-radius: 4px;
+    transition: color 0.2s;
+    border-left: 4px solid transparent;
+  }
+
+  /* Fix the bright/unreadable focus and active states in TOC */
+  .custom-sidebar-toc .toc__menu li,
+  .custom-sidebar-toc .toc__menu a,
+  .custom-sidebar-toc .toc__menu a:hover,
+  .custom-sidebar-toc .toc__menu a:focus,
+  .custom-sidebar-toc .toc__menu a.active,
+  .custom-sidebar-toc .toc__menu a.is-active,
+  nav.toc .toc__menu li,
+  nav.toc .toc__menu li a,
+  nav.toc .toc__menu li a.is-active {
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    text-decoration: none !important;
+  }
+
+  .custom-sidebar-toc .toc__menu a:hover,
+  .custom-sidebar-toc .toc__menu a:focus,
+  .custom-sidebar-toc .toc__menu a.active,
+  .custom-sidebar-toc .toc__menu a.is-active,
+  nav.toc .toc__menu li a.is-active {
+    color: #7aa2f7 !important; /* Even brighter highlight color */
+    font-weight: 700 !important;
+    border-left: 4px solid #7aa2f7 !important;
+    padding-left: 15px !important;
+  }
+
+  /* Hide the theme's default right-side TOC and any potential "empty boxes" */
+  .sidebar__right,
+  .toc.sticky,
+  aside.sidebar__right,
+  .page__content .toc {
+    display: none !important;
+  }
+
+  /* LINKS */
+  a {
+    color: #7aa2f7;
+    transition: color 0.2s;
+  }
+  a:hover {
+    color: #9ece6a;
+  }
+
+  /* Jupyter Specifics */
+  .jp-OutputArea-output pre, .output_subarea pre {
+    padding: 12px !important;
+    border-radius: 6px;
+    border: 1px solid #414868;
+  }
+  .jp-InputPrompt, .jp-OutputPrompt, .prompt {
+    display: none !important;
+  }
+
+  /* Mobile Adjustments */
+  @media (max-width: 900px) {
+    #main {
+      display: block !important;
+      padding: 0 20px !important;
+    }
+    .sidebar {
+      display: none !important; /* Hide bio and sidebar entirely on mobile */
+    }
+    .custom-sidebar-toc {
+      display: none !important; /* Hide TOC on mobile */
+    }
+    .page {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin: 0 auto !important;
+    }
+    #page-title {
+      font-size: 2.2em !important;
+    }
+  }
 </style>
+
+<script>
+  window.addEventListener('load', function () {
+    var notebook = document.querySelector('#notebook');
+    if (notebook) {
+      notebook.style.background = 'transparent';
+      notebook.style.width = '100%';
+    }
+  });
+</script>

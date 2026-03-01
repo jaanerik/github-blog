@@ -5,12 +5,6 @@ toc: true
 toc_sticky: true
 ---
 
-<style type="text/css">
-    p {
-        text-align: justify;
-    }
-</style>
-
 ## The problem
 In the [previous post](https://jaanerikpihel.com/2025/08/23/intro.html) we introduced the concept of triplet Markov chains. However we are considering these models for a fixed observation vector $$\hat{\textbf{y}} = (\hat{y}_t)_{t=1}^T$$.
 
