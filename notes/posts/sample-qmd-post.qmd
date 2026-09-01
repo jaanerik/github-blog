@@ -1,0 +1,22 @@
+---
+title: "Sample executed post"
+format: gfm
+---
+
+Links back to [[test-note]].
+
+The identity $\E[X+Y] = \E[X] + \E[Y]$ holds even when $X \not\indep Y$.
+
+```{python}
+#| label: fig-sine
+#| fig-cap: "A sine wave, executed at render time"
+import numpy as np
+import matplotlib.pyplot as plt
+x = np.linspace(0, 2 * np.pi, 200)
+plt.plot(x, np.sin(x))
+plt.show()
+```
+
+```{python}
+print(f"computed at render time: {np.trapezoid(np.sin(x), x):.4f}")
+```
