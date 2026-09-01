@@ -40,6 +40,10 @@ Quartz build/node dirs are added to Jekyll `exclude:` in `_config.yml`.
 - Executable posts: `.qmd` with Python code blocks. Run `quarto render`
   locally; outputs become Markdown + figure files that Quartz treats as
   ordinary notes.
+- Obsidian compatibility: `notes/` doubles as an Obsidian vault. Obsidian
+  ignores the `.qmd` sources (unrecognized extension) and sees only the
+  rendered `.md` with outputs. Rendered `.md` is generated — edit the
+  `.qmd`, never the rendered file.
 - Caching: `freeze: auto` — a `.qmd` re-executes only when its own source
   changes. `_freeze/` is committed, so CI never executes Python.
 - LaTeX: KaTeX via Quartz. Custom macros (e.g. `\indep`) defined once in the
