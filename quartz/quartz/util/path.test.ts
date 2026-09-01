@@ -274,6 +274,21 @@ describe("link strategies", () => {
       assert.strictEqual(path.transformLink(cur, "a/b/index", opts), "./a/b/")
       assert.strictEqual(path.transformLink(cur, "index", opts), "./")
     })
+
+    test("multi-segment paths resolve relative to the source file's folder", () => {
+      // e.g. quarto/pandoc figure dirs: ![](note_files/fig/plot.png) next to the note
+      const localOpts: TransformOptions = {
+        strategy: "shortest",
+        allSlugs: [...allSlugs, "a/b/c_files/fig/plot.png" as FullSlug],
+      }
+      const cur = "a/b/c" as FullSlug
+      assert.strictEqual(
+        path.transformLink(cur, "c_files/fig/plot.png", localOpts),
+        "../../a/b/c_files/fig/plot.png",
+      )
+      // unresolvable multi-segment paths keep vault-root fallback behavior
+      assert.strictEqual(path.transformLink(cur, "nope/plot.png", localOpts), "../../nope/plot.png")
+    })
   })
 
   describe("relative", () => {

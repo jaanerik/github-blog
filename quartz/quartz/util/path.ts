@@ -249,6 +249,27 @@ export function transformLink(src: FullSlug, target: string, opts: TransformOpti
         const targetSlug = matchingFileNames[0]
         return (resolveRelative(src, targetSlug) + targetAnchor) as RelativeURL
       }
+
+      // multi-segment paths (e.g. quarto figure dirs) resolve relative to the source folder
+      if (targetCanonical.includes("/")) {
+        const stack = src.split("/").slice(0, -1)
+        let ok = true
+        for (const seg of targetCanonical.split("/")) {
+          if (seg === "..") {
+            if (stack.length === 0) {
+              ok = false
+              break
+            }
+            stack.pop()
+          } else if (seg !== "." && seg !== "") {
+            stack.push(seg)
+          }
+        }
+        const resolved = stack.join("/") as FullSlug
+        if (ok && opts.allSlugs.includes(resolved)) {
+          return (resolveRelative(src, resolved) + targetAnchor) as RelativeURL
+        }
+      }
     }
 
     // if it's not unique, then it's the absolute path from the vault root
