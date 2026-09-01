@@ -24,12 +24,13 @@ notes/               # the vault: .md notes + .qmd executable posts
   index.md           # garden home page
 _quarto.yml          # Quarto project config (freeze: auto, output gfm)
 _freeze/             # committed Quarto execution results
-quartz/              # Quartz 4 generator (vendored from upstream template)
-quartz.config.ts     # Quartz config: baseUrl, theme, KaTeX macros, plugins
+quartz/              # Quartz 4 generator, vendored from upstream template;
+                     # its quartz.config.ts holds baseUrl, theme, KaTeX
+                     # macros, plugins
 .github/workflows/deploy.yml
 ```
 
-`notes/`, `_freeze/`, `_quarto.yml`, `quartz/`, `quartz.config.ts`, and
+`notes/`, `_freeze/`, `_quarto.yml`, `quartz/`, and
 Quartz build/node dirs are added to Jekyll `exclude:` in `_config.yml`.
 
 ## Authoring flow
