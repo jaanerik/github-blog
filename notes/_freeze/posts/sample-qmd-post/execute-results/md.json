@@ -1,10 +1,10 @@
 {
-  "hash": "22856c8a4ef7cd2c56833c07a33ed3d8",
+  "hash": "16335511d492e333f710a35f83fd424b",
   "result": {
     "engine": "jupyter",
-    "markdown": "---\ntitle: \"Sample executed post\"\nformat: gfm\n---\n\nLinks back to [[test-note]].\n\nThe identity $\\E[X+Y] = \\E[X] + \\E[Y]$ holds even when $X \\not\\indep Y$.\n\n::: {.cell execution_count=1}\n``` {.python .cell-code}\nimport numpy as np\nimport matplotlib.pyplot as plt\nx = np.linspace(0, 2 * np.pi, 200)\nplt.plot(x, np.sin(x))\nplt.show()\n```\n\n::: {.cell-output .cell-output-display}\n![A sine wave, executed at render time](sample-qmd-post_files/figure-commonmark/fig-sine-output-1.png){#fig-sine}\n:::\n:::\n\n\n::: {.cell execution_count=2}\n``` {.python .cell-code}\nprint(f\"computed at render time: {np.trapezoid(np.sin(x), x):.4f}\")\n```\n\n::: {.cell-output .cell-output-stdout}\n```\ncomputed at render time: 0.0000\n```\n:::\n:::\n\n\n",
+    "markdown": "---\ntitle: \"Sample executed post\"\nformat: gfm\n---\n\nLinks back to [test-note](../test-note).\n\nThe identity $\\E[X+Y] = \\E[X] + \\E[Y]$ holds even when $X \\not\\indep Y$.\n\n::: {.cell execution_count=1}\n``` {.python .cell-code}\nimport numpy as np\nimport matplotlib.pyplot as plt\nx = np.linspace(0, 2 * np.pi, 200)\nplt.plot(x, np.sin(x))\nplt.show()\n```\n\n::: {.cell-output .cell-output-display}\n![A sine wave, executed at render time](sample-qmd-post_files/figure-commonmark/fig-sine-output-1.png){#fig-sine}\n:::\n:::\n\n\n::: {.cell execution_count=2}\n``` {.python .cell-code}\nprint(f\"computed at render time: {np.trapezoid(np.sin(x), x):.4f}\")\n```\n\n::: {.cell-output .cell-output-stdout}\n```\ncomputed at render time: 0.0000\n```\n:::\n:::\n\n\n",
     "supporting": [
-      "sample-qmd-post_files"
+      "sample-qmd-post_files/figure-commonmark"
     ],
     "filters": [],
     "includes": {}

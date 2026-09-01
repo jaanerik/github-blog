@@ -1,7 +1,7 @@
 # Sample executed post
 
 
-Links back to \[\[test-note\]\].
+Links back to [test-note](../test-note).
 
 The identity $\E[X+Y] = \E[X] + \E[Y]$ holds even when $X \not\indep Y$.
 
