@@ -22,7 +22,7 @@ const config: QuartzConfig = {
       "**/*.qmd",
       "_quarto.yml",
       "_freeze",
-      ".quarto",
+      ".quarto", "**/__pycache__",
       "README.md",
     ],
     defaultDateType: "modified",
@@ -82,6 +82,7 @@ const config: QuartzConfig = {
         renderEngine: "katex",
         customMacros: {
           "\\indep": "\\perp\\!\\!\\!\\perp",
+        "\\supp": "\\operatorname{supp}",
           "\\E": "\\mathbb{E}",
           "\\R": "\\mathbb{R}",
         },
