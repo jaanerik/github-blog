@@ -71,3 +71,11 @@ defaults:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+exclude:
+  - notes/
+  - quartz/
+  - docs/
+  - vendor/
+  - Gemfile
+  - Gemfile.lock
