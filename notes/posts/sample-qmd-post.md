@@ -1,4 +1,7 @@
-# Sample executed post
+---
+title: Sample executed post
+format: gfm
+---
 
 
 Links back to [test-note](../test-note).

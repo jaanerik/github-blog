@@ -12,12 +12,19 @@ const config: QuartzConfig = {
     pageTitleSuffix: "",
     enableSPA: true,
     enablePopovers: true,
-    analytics: {
-      provider: "plausible",
-    },
+    analytics: null,
     locale: "en-US",
     baseUrl: "jaanerikpihel.com/notes",
-    ignorePatterns: ["private", "templates", ".obsidian", "**/*.qmd", "_quarto.yml", "_freeze"],
+    ignorePatterns: [
+      "private",
+      "templates",
+      ".obsidian",
+      "**/*.qmd",
+      "_quarto.yml",
+      "_freeze",
+      ".quarto",
+      "README.md",
+    ],
     defaultDateType: "modified",
     theme: {
       fontOrigin: "googleFonts",

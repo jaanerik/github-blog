@@ -8,3 +8,5 @@ execute:
 format:
   gfm:
     output-ext: md
+    preserve-yaml: true
+    variant: +yaml_metadata_block
