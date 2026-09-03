@@ -7,3 +7,7 @@ vendor
 .DS_Store
 !/docs
 !/scripts
+
+# Never publish the copyrighted source book
+notes/**/*.pdf
+__pycache__/
