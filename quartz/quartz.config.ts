@@ -47,15 +47,16 @@ const config: QuartzConfig = {
           textHighlight: "#fff23688",
         },
         darkMode: {
-          light: "#161618",
-          lightgray: "#393639",
-          gray: "#646464",
-          darkgray: "#d4d4d4",
-          dark: "#ebebec",
-          secondary: "#a882ff", // Obsidian purple accent
-          tertiary: "#7c5cd6",
-          highlight: "rgba(143, 159, 169, 0.15)",
-          textHighlight: "#b3aa0288",
+          // Nord palette, matching the vault's sioyek-nord Obsidian snippet
+          light: "#2E3440",
+          lightgray: "#3B4252",
+          gray: "#7B879D",
+          darkgray: "#D8DEE9",
+          dark: "#ECEFF4",
+          secondary: "#88C0D0",
+          tertiary: "#8FBCBB",
+          highlight: "rgba(136, 192, 208, 0.15)",
+          textHighlight: "#EBCB8B59",
         },
       },
     },
@@ -69,7 +70,7 @@ const config: QuartzConfig = {
       Plugin.SyntaxHighlighting({
         theme: {
           light: "github-light",
-          dark: "github-dark",
+          dark: "nord",
         },
         keepBackground: false,
       }),
