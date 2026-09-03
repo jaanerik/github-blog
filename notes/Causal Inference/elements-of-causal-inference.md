@@ -1,7 +1,7 @@
 ---
 title: "Notes: Elements of Causal Inference (Peters, Janzing, Schölkopf)"
 ---
-
+********
 ## Page 35
 
 *p. 35*

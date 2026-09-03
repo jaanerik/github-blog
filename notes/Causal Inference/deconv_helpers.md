@@ -14,7 +14,7 @@ i.e. $r = A p$ for the $(m+1)\times m$ banded matrix $A$ with $\tfrac12$ on the 
 
 **Common thread.** Deconvolution is a map on distributions, $P_Y\mapsto P_X$, determined by the noise law only, and it is linear. Keep this in mind for Problem 5.1 b).
 
-**Exercise (stays inside Helper 2).** For $X\sim\mathcal N(0,a^2)$, $N\sim\mathcal N(0,b^2)$, compute the conditional law $P_{X\mid Y=y}$ (Gaussian; same computation as Problem 3.6 in `p36.tex`). Then ask what map on distributions $P_{X\mid Y}$ induces via $P_X(B)=\int P_{X\mid Y=y}(B)\,P_Y(dy)$, and compare its ingredients with the deconvolution map’s ingredients.
+**Exercise (stays inside Helper 2).** For $X\sim\mathcal N(0,a^2)$, $N\sim\mathcal N(0,b^2)$, compute the conditional law $P_{X\mid Y=y}$ (Gaussian; same computation as Problem 3.6 in `p36.tex`). Then ask what map on distributions $P_{X\mid Y}$ induces via $P_X(B)=\int P_{X\mid Y=y}(B)\,P_Y(dy)$, and compare its ingredients with the deconvolution map’s ingredients. ^bde910
 
 **Solution** Let us fix $y$ and write
 
@@ -22,7 +22,7 @@ $$
 p(x|y) = \frac{p(x)p(y|x)}{p(y)} = \frac{1/a \phi(x/a) \cdot 1/b \phi((y-x)/b)}{1/\sqrt{a^2+b^2} \phi(y/\sqrt{a^2+b^2})} = c(y) \exp \left[ -(x/a)^2/2 - (y-x)^2/2b^2 + y^2/2(a+b) \right]
 $$
 
-Now note that $y^2/(a+b) \text{ and }, y^2/2b^2$ can be subsumed into some new $\Tilde{c}(y)$. Now focus on the exponent terms containing $x$
+Now note that $y^2/(a+b) \text{ and }, y^2/2b^2$ can be subsumed into some new $\tilde{c}(y)$. Now focus on the exponent terms containing $x$
 
 $$
 \begin{align*}
